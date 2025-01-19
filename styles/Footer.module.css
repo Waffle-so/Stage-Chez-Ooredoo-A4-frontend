@@ -1,0 +1,103 @@
+.footer{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgb(55, 55, 55);
+    font-family: "Inter", sans-serif;
+    width: 1700px;
+    height: 300px;
+    top:110%;
+}
+
+@media screen and (max-width: 480px) {
+    .footer{
+        display: none;
+    }
+}
+.up{
+    border-bottom: 1px solid rgb(174, 174, 174);
+    height: 245px;
+    width: 1600px;
+    padding: 20px;
+    position: relative;
+    left: 40px;
+    display: flex;
+
+}
+
+.up div{
+    position:relative;
+   
+    width: 320px;
+    height: 210px;
+    left: 110px;
+}
+
+.footer_img{
+    width: 120px;
+    height: 25px;
+    position: relative;
+    left: -20px;
+    top: 20px;
+}
+
+.footer h2{
+font-size: 12px;
+font-weight: 100;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+width: 220px;
+color: black;
+position: relative;
+top: -20px;
+left: -20px;
+}
+
+.up div{
+    display:grid;
+    color: black;
+    padding:20px ;
+}
+.up div h3{
+    font-size: 17px;
+    position: relative;
+    top: px;
+}
+.up div a{ 
+    font-size: 12px;
+    font-weight: 100;
+    width: 180px;
+    height: max-content;
+    transition: font-size 0.2s, color 0.3s;
+}
+
+.up div a:hover{ 
+   font-size: 13px; 
+   color: brown;
+}
+
+
+
+
+
+
+
+/*DOWN --------------------------------*/
+
+
+.down div{
+    display: flex;
+    color: black;
+    font-size: 13px;
+    font-weight: 100;
+    position: relative;
+    left: 1070px;
+    top: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.down div a{
+    margin-right: 15px;
+    transition: font-size 0.2s;
+}
+.down div a:hover{
+font-size: 14px;
+}

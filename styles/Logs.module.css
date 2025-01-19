@@ -1,0 +1,162 @@
+.div_all_log{
+    color: black;
+    width: 1500px;
+    height: 1500px;
+    max-height: 1500px;
+    margin-left:-60px;
+    height: auto;
+    font-family: 'Inter','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 15px;
+}
+
+.div_all_log h1{
+  position: relative;
+  left: 65px;
+}
+
+.table_container_logs{
+    height: 1500px;
+    max-height: 1500px; /* Limite la hauteur du tableau */
+    overflow-y: auto; /* Active la barre de défilement verticale */
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow-x: auto ;
+    position: relative;
+    width: 1500px;
+    left: 50px;
+
+  }
+.table_logs{
+    width: 105%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-left: 0px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 15px;
+    position: relative;
+    left: 10px;    font-size: 13px;
+}
+
+.table_logs th,
+.table_logs td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.table_logs th {
+    background-color: #ffffff;
+    color: rgb(2, 2, 2);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.table_logs tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table_logs tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table_logs td {
+    color: #333;
+}
+.table_logs tr td:nth-child(1){
+    color: blue;
+    font-weight:lighter;
+    font-size: 12px;
+}
+.table_logs tr td:nth-child(2){
+   display: flex;
+}
+
+.table_logs button{
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    font-size: 12px;
+    transition: color 0.1s ease;
+    font-weight: 700;
+}
+
+.table_logs button:nth-child(1){
+   margin-right: 20px;
+}
+.table_logs button:hover{
+    color:#0369cf;
+}
+
+/* Styles pour la barre de défilement uniquement dans le tableau */
+.table_container_logs::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 15px;
+}
+
+.table_container_logs::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 15px;
+}
+
+.table_container_logs::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 15px;
+  border: 2px solid #f0f0f0;
+}
+
+.table_container_logs::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+.div_dateInput_log{
+  position: absolute;
+  top: 680px;
+  margin-left: 1340px;
+}
+
+.div_dateInput_log{
+    position: absolute;
+    top: 30px;
+    margin-left: 1000px;
+    display: flex;
+    font-size: 12px;
+  }
+  
+  .dateInput {
+    padding: 5px;
+    width: 30px;
+    margin: 5px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    color: #000000;
+    background-color: rgb(66, 63, 234);
+    border: 1px solid black;
+   
+    
+  }
+  .searchInput {
+    padding: 8px 12px;
+    position: relative;
+    left: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+    background-color: white;
+    color: black;
+    font-size: 12px;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    border-color: #007bff;
+  }

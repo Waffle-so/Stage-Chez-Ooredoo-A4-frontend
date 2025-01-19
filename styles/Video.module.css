@@ -1,0 +1,624 @@
+.background_video_div {
+    width: 100%;
+    max-width: 1800px;
+    height: auto;
+    position: relative;
+    top: -100px;
+    margin: 0 auto; /* Centre la div horizontalement */
+}
+
+
+.div_all_video{
+    margin: 30px;
+    color: black;
+    padding: 20px;
+    width: 1700px;
+    height: auto;
+    display: flex;
+    font-family: 'Inter', sans-serif;
+ 
+}
+
+.div_all_video button{
+margin-bottom: 20px;
+font-size: 15px;
+font-family: 'Inter', serif;
+font-weight: 500;
+color: rgb(0, 6, 183);
+position: relative;
+left: 60px;
+top: -10px;
+background:none;
+border: none;
+}
+
+
+.div_unique_vid{
+height: auto;
+width: 1000px;
+padding: 15px;
+position: relative;
+left: -110px;
+}
+
+.pdp{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.flexing{
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    position: relative;
+    left: 70px;
+}
+.flexing p{
+    position: relative;
+    top: 0%;
+    left: 10px;
+}
+.grid{
+    display: grid;
+    position: relative;
+    left:60px;
+}
+.div_unique_vid h1{
+font-size: 35px;
+margin-bottom: 40px;
+width: 900px;
+max-width: 900px;
+position: relative;
+top: 7px;
+left: 10px;
+}
+
+.div_de_la_video{
+    width: 1400px;
+    height: 700px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    left: 70px;
+}
+.div_de_la_video_after{
+    width: 1100px;
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    left: 70px;
+}
+.video{
+    width: 100%;
+    height: 100%;
+   object-fit: cover;
+    display: block;
+}
+
+.downloadButton{
+    position: relative;
+    top: 5px;
+    left: 420px;
+    width: 130px;
+    height:40px;
+    border: 1px solid;
+    padding: 10px;
+    padding-right: 35px;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: background-color 0.2s , color 0.1s;
+}
+.downloadButton_after{
+    left: 400px;
+}
+
+.downloadButton:hover{
+color: rgb(33, 33, 33);
+background-color: rgb(233, 233, 233);
+font-weight: 100;
+border: 1px solid black;
+}
+
+.logo_download{
+    position: absolute;
+    top: 8px;
+    left: 97px;
+    width: 22px;
+    height: 22px;
+}
+
+
+
+
+.Description{
+    margin-top: 25px;
+    position: relative;
+    left: 70px;
+    background-color: rgba(128, 128, 128, 0.164);
+    width: 1400px;
+    min-width: 1400px;
+    height: auto;
+    max-width: 920px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+}
+.Description_after{
+    width: 1100px;
+    min-width: 1100px;
+    max-width: 1100px;
+}
+
+
+.Description h4{
+font-size: 12px;
+font-weight: 100;
+position: relative;
+left: 92%;
+top: -23px;
+}
+.Description_after h4{
+    position: relative;
+    left: 90%;
+}
+.div_unique_vid h5{
+font-size:20px;
+}
+
+.div_unique_vid p{
+width: 1000px;
+max-width: 1000px;
+word-spacing: 0.5px;
+margin-top: 15px;
+font-weight: 300;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 18px;
+
+}
+.Description_after p{
+  width: 1000px;
+max-width: 1000px;
+}
+
+
+.videosList{
+    position:relative;
+    top: 130px;
+    left: -55px;
+   
+}
+
+
+
+
+
+
+
+.commentaire_div{
+    width: 1400px;
+    height: auto;
+    padding: 10px;
+    margin-top: 20px ;
+    margin-left: 60px;
+
+}
+
+.commentaire_div_after{
+    width: 1180px;
+    max-width: 1180px;
+    min-width: 1180px;
+    position: relative;
+    left: -200px;
+    
+}
+
+.commentaire_div textarea{
+    font-family: sans-serif;
+    font-weight: 100;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid black;
+    padding-top: 30px;
+    padding-left: 5px ;
+    width:1390px ;
+    max-width: 1390px;
+    min-width: 1390px;
+    height: 50px;
+    max-height: 55px ;
+    min-height: 50px;
+    color: black;
+    outline: none; /* Enlève la bordure de focus */
+    transition: border-bottom-color 0.1s, border-bottom 0.1s, transform 0.1s ; 
+    overflow-y: hidden;
+    
+}
+
+.commentaire_div_after textarea{
+    width:1100px ;
+    max-width: 1100px;
+    min-width: 1100px;
+    margin-left: 270px;
+    
+}
+.commentaire_div_after h3{
+    width:1160px ;
+    max-width: 1160px;
+    min-width: 1160px;
+    margin-left: 270px;
+    
+}
+
+
+/* Change la couleur de la bordure quand le textarea est en focus */
+.commentaire_div textarea:focus {
+    border-bottom: 2px solid;
+    transform: scale(1.01);
+    border-bottom-color: rgb(0, 0, 171); /* Remplacez 'blue' par la couleur de votre choix */
+}
+
+.commentaire_div button{
+    background-color: blue;
+    color: white;
+    padding: 6.5px;
+    padding-left: 10px;
+    padding-right:10px ;
+    border-radius: 15px;
+    font-size: 13px;
+    transition: background-color 0.2s  ;
+    margin-top: 15px;
+    margin-left: 83%;
+    
+}
+.commentaire_div_after button{
+    position: relative;
+    left: 230px;
+    
+}
+
+.commentaire_div button:hover{
+ background-color: rgb(0, 106, 255);
+}
+.flexing_comment{
+    display: flex;
+    width: max-content;
+    
+}
+.flexing_comment img{
+width: 40px;
+height: 40px;
+
+}
+.flexing_comment p{
+    font-family: 'Inter',sans-serif;
+    font-size: 13px;
+    position: relative;
+    left: 10px;
+    top: -5px;
+    
+}
+
+
+
+
+
+.commentaire {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 600px;
+    max-height: 600px;
+    width: max-content;
+}
+
+.commentaire::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 15px;
+  }
+  
+  .commentaire::-webkit-scrollbar-track {
+    background: #5c5c5c;
+    border-radius: 15px;
+  }
+  
+  .commentaire::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+  }
+  
+  .commentaire::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+
+
+
+  
+.commentaire_individuel{
+    background-color: rgba(219, 219, 219, 0.447);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 15px;
+    height: auto;
+    width: 1390px;
+    max-width: 1390px;
+    min-width: 1390px;
+}
+.commentaire_individuel_after{
+position: relative;
+left: -270px;
+width: 1120px;
+max-width: 1120px;
+min-width: 1120px;
+}
+
+.commentaire_individuel button:nth-child(4){
+    margin-right: 40px;
+    }
+    .commentaire_individuel button:nth-child(5){
+        margin-right: 40px;
+        }
+        .but_show_replies{
+            position: relative;
+            left: 1240px;
+            top: -10px;
+            margin-bottom: -40px;
+            }
+
+.commentaire_individuel_after button{
+    position: relative;
+    left: 60px;  
+    }
+    
+
+.commentaire_individuel p{
+  width:max-content;
+}
+
+.commentaire_individuel p:nth-child(3){
+    font-size: 12px;
+    font-weight: 100;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: grey;
+    margin-left: 10px;
+    
+
+}
+.text_comment{
+  position: relative;
+  left: 50px;
+  top: -28px;
+  margin-bottom: -20px;
+  width: 1300px;
+  max-width: 1300px;
+  min-width: 1300px; 
+}
+
+.text_comment_after{
+    position: relative;
+    left:-220px;
+    width: 500px;
+    max-width: 500px;
+    min-width: 500px; 
+}
+
+.text_comment label{
+background-color: rgb(0, 106, 255);
+color: white;
+padding: 5px;
+font-size: 12px;
+border-radius: 5px;
+}
+
+.commentaire_individuel button{
+    position: relative;
+    height: 10px;
+    margin-left: -50px;
+    font-size: 10px;
+    background:none;
+    color: black;
+    transition: transform 0.1s, color 0.1s;
+}
+
+
+.commentaire_individuel button:hover{
+    background: none;
+    transform: scale(1.09);
+    color: blue;
+}
+
+
+
+.replyBox textarea{
+    max-width: 1200px;
+    min-width: 1200px;
+    width: 300px;
+    background-color: #0037ff;
+    position: relative;
+    left: 50px;
+}
+.replyBox button{
+    position: relative;
+    left: 90px;
+}
+.replyBox textarea {
+    background-color: rgba(219, 219, 219, 0);
+    max-width: 100px;
+}
+
+.reply .flexing_comment{
+    padding-top: 20px;
+    width: 90%;
+}
+.text_reply{
+    position: relative;
+    left: 50px;
+    top: -20px;
+}
+.text_reply label{
+    background-color: rgb(0, 196, 0);
+    padding: 5px;
+    font-size: 12px;
+    color: white;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Playlist{
+    position: relative;
+    left: -100px;
+    top: -70px;
+    width: 465px;
+    height: 100%;
+    max-height: 100%;
+  
+}
+
+.Playlist h2 {
+    font-size: 12px; /* Taille du titre */
+    font-weight: 100;
+    width: 190px;
+    max-width: 190px;
+    margin: 0; /* Pas de marge */
+    color: #0a090e; /* Couleur du lien */
+    cursor: pointer; /* Curseur en pointeur pour les titres cliquables */
+    position: relative;
+    left: -20px;
+}
+
+.Playlist h2:hover{
+    color: #3300ff; /* Couleur du lien */
+}
+
+.videoWithSidebarOpen {
+    margin-left: 270px; /* Déplace la vidéo vers la gauche (en fonction de la largeur de la sidebar) */
+    transition: margin-left 0.3s ease; /* Transition fluide */
+  }
+
+ /* Par défaut */
+.Playlist section {
+    max-height: 80%;
+}
+
+  
+    
+ 
+  /* Cas 80% (1000px <= largeur < 1350px) */
+  @media screen and (max-width: 1800px) and (max-width: 1900px)  {
+    .Playlist section {
+      max-height: 72%;
+    }
+  }
+
+   /* Cas 80% (1000px <= largeur < 1350px) */
+  @media screen and (max-width: 2100px) and (max-width: 2200px) {
+    .Playlist section {
+      max-height: 80%;
+    }
+  }
+  @media screen and (max-width: 1600px) {
+.videoWithSidebarOpen{
+    margin-left: 350px;
+}
+.Playlist section {
+    max-height: 65%;
+  }
+.toggleButton{
+    position: absolute;
+    left: -50px;
+    margin-left: 50px;
+}
+.commentaire_after{
+    margin-left: 180px;  
+}
+
+.commentaire_individuel_after .text_comment{
+    margin-left: 270px;
+}
+
+  }
+ 
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 380px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+    z-index: 500;
+}
+.sidebar.open{
+    left: 0;
+}
+.sidebar.closed{
+    left: -530px;
+}
+.open {
+    transform: translateX(0);
+}
+
+.closed {
+    transform: translateX(-100%);
+}
+
+.toggleButton {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #007bff;
+    color: rgb(6, 6, 6);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.3s ease;
+   margin-left: -20px;
+
+}
+.toggleButton_p {
+
+    background-color: #0037ff;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: left 0.3s ease;
+
+}
+
+.but_sidebar{
+    position: relative;
+    left: 200px;top: 65px;
+}
+
+
+.img_2, .Image {
+    margin: 5px;
+    cursor: pointer;
+}

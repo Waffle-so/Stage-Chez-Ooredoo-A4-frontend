@@ -1,0 +1,733 @@
+.sidebar {
+  width: 250px;
+  background-color: #171717f3;
+  color: #ecf0f1;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0; /* Positionnez en haut de la page */
+  right: 0; /* Alignez à droite */
+  transition: transform 0.4s ease; /* Ajoute une transition */
+  z-index: 100;
+  border: 1px solid rgb(50, 50, 50);
+}
+
+
+.open {
+  transform: translateX(0); /* Affiche la sidebar */
+}
+
+.closed {
+  transform: translateX(100%); /* Cache la sidebar à droite */
+}
+
+.toggleButton {
+  position: relative;
+  background-color: #262626;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: block; /* Assure que le bouton est un bloc */
+  font-size: 1rem; /* Taille de police */
+  transition: background-color 0.2s, margin-left 0.4s; /* Transition pour le changement de couleur */
+  top: 50px; /* Ajustez la position verticale si nécessaire */
+  left: -50px; /* Positionne le bouton à l'extérieur de la sidebar */
+  border: 1px solid rgb(83, 83, 83);
+}
+
+.toggleButton:hover {
+  background-color: #2b2b2bd9; /* Changement de couleur au survol */
+ 
+}
+
+.header {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  top: 13px;
+  left: 10px;
+  font-family:sans-serif,Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  background: linear-gradient(90deg, rgb(218, 216, 255) 0%, rgb(255, 255, 255) 0%, rgb(106, 106, 255) 35%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  
+}
+
+.flexing{
+  display: flex;
+  position: relative;
+  top: -70px;
+  left: 40px;
+}
+
+/* Ajouter des styles pour les notifications */
+.newMessage {
+  background-color: #5454ff49; /* Exemple de couleur pour indiquer un nouveau message */
+  padding: 6px;
+  border-radius: 15px;
+}
+
+.notification {
+  position: absolute;
+  font-size: 10px;
+  margin-top: 25px;
+  left: 50px;
+  color: rgb(255, 255, 255); /* Style pour indiquer qu'il y a un nouveau message */
+  font-weight: bold;
+}
+
+
+.Image{
+  width: 20px;
+  height: 18px;
+  filter: invert();
+}
+
+.img_2{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 15px;
+}
+
+
+
+.modal_container_rec_offre{
+  position: relative;
+  height: 93%; /* Pour que l'élément prenne toute la hauteur disponible */
+}
+
+
+.messages{
+  position: relative;
+  top: -20px;
+height: 77%;
+width: 215px;
+max-height: 77%;
+/*border: 1px solid;*/
+overflow-y: auto;
+overflow-x: hidden;
+}
+
+.messages::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 15px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: #5c5c5c;
+  border-radius: 15px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 15px;
+  border: none;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+.number_of_connect{
+  display: flex;
+  margin-bottom: 40px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  color: #bdbdbd;
+
+}
+
+.number_of_connect p{
+  background-color: rgba(0, 0, 255, 0.459);
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 10px;
+  font-size: 10px;
+  position: relative;
+  left: 10px;
+
+}
+
+.li_connected_users{
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  
+}
+.li_connected_users p{
+  position: relative;
+  top: 5px;
+  left: -10px;
+  font-size: 13px;
+  font-weight: 100;
+  max-height: max-content;
+  width: 150px;
+  max-width: 150px;
+  color: white;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: color 0.2s;
+}
+.li_connected_users p:hover{
+  color: rgb(0, 123, 255);
+}
+
+.ph_profil{
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+
+.status{
+  width: 13px;
+  height: 13px;
+  background-color: rgb(41, 176, 41);
+  border-radius: 50px;
+  position: relative;
+  left: -20px;
+  border: 2px solid rgb(244, 255, 223);
+}
+.status_no{
+  width: 13px;
+  height: 13px;
+  background-color: rgb(110, 110, 110);
+  border-radius: 50px;
+  position: relative;
+  left: -20px;
+  border: 2px solid rgb(143, 143, 143);
+}
+
+.chat{
+  filter: invert();
+  width: 20px;
+  height: 20px;
+  transition: width 0.1s, height 0.1s;
+  position: relative;
+  left: -8px;
+}
+.chat:hover{
+  width: 23px;
+  height: 23px;
+ 
+}
+
+.separateur{
+  position: relative;
+  top: -15px;
+  left: -30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #767676;
+}
+
+
+
+
+
+.li_no_connected_users{
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  
+}
+.li_no_connected_users p{
+  position: relative;
+  top: 5px;
+  left: -10px;
+  font-size: 13px;
+  font-weight: 100;
+  max-height: max-content;
+  width: 150px;
+  max-width: 150px;
+  color: rgb(179, 179, 179);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: color 0.2s;
+}
+.li_no_connected_users p:hover{
+  color: rgb(0, 123, 255);
+}
+.li_no_connected_users img {
+  filter: brightness(0.5);
+}
+
+
+
+
+
+
+
+
+
+
+.deco_div{
+  background:none;
+border: none;
+display: flex;
+font-family: 'Inter',serif, sans-serif;
+}
+
+.deco_div p {
+  position: relative;
+  top: 1px;
+  left: -15px;
+  font-weight: 100;
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+.div_bas2{
+  padding: 15px;
+  border-radius: 0px ;
+  position: absolute;
+  top: 92%;
+  left: 0px;
+  width: 250px;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.301);
+
+}
+
+.deco2{
+  background:none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-right: 40px;
+  position: relative;
+  left: 5px;
+  }
+
+  .info_user{
+  justify-content: start;
+  text-align: start;
+  position: relative;
+  left: -10px;
+  }
+
+  .info_user p:nth-child(1){
+    font-size: 12px;
+    font-weight: 100;
+  }
+
+  .info_user p:nth-child(2){
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+  }
+
+  .status2{
+    width: 13px;
+    height: 13px;
+    background-color: rgb(41, 176, 41);
+    border-radius: 50px;
+    position: absolute;
+    left: -35px;
+    top: 0px;
+    border: 2px solid rgb(255, 255, 255);
+  }
+
+  .logout_box {
+    position: absolute;
+    top: -90%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 10;
+  }
+  
+  .logout_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+    transition: background-color 0.3s ease;
+  }
+  .logout_button:hover {
+    background-color: #d32f2f;
+  }
+
+  .logout_button p{
+    position:relative;
+    left: 20px;
+  }
+  .deco{
+    background:none;
+    border: none;
+    filter:invert();
+    width: 19px;
+    height: 19px;
+    margin-right: 40px;
+    position: relative;
+    left: 29px;
+    transition: transform 0.1s;
+    }
+    .deco:hover{
+      transform: scale(1.2);
+    }
+
+
+
+
+
+
+/*MODAL PARTIE */
+
+
+
+/* Scrollbar personnalisée pour Webkit (Chrome, Safari, etc.) */
+.messagesContainer::-webkit-scrollbar {
+  width: 8px; /* Réduit la largeur du scrollbar */
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  background: #f7f7f7; /* Couleur de fond du track (où se déplace le scrollbar) */
+  border-radius: 10px; /* Coins arrondis pour le track */
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3; /* Couleur du scrollbar */
+  border-radius: 10px; /* Coins arrondis pour le scrollbar */
+  border: 2px solid #f7f7f7; /* Ajouter un peu d'espace autour du scrollbar */
+}
+
+
+
+.top_message{
+  border-bottom: 1px solid rgb(154, 154, 154);
+  padding-bottom: 15px;
+}
+
+
+
+.close_ph{
+  width:25px;
+  height: 25px;
+  background-color: #ffffff;
+}
+
+/* Conteneur pour chaque message avec son image de profil */
+.all_message_div {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+/* Conteneur des messages envoyés par l'utilisateur (aligné à droite) */
+.myMessageContainer {
+  flex-direction: row-reverse; /* Inverser l'ordre pour les messages de l'utilisateur */
+  justify-content: flex-end;
+  
+}
+
+/* Conteneur des messages reçus (aligné à gauche) */
+.otherMessageContainer {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* Conteneur de l'image de profil */
+.profileContainer {
+  margin-right: 10px;
+}
+
+.myMessageContainer .profileContainer {
+  margin-left: 10px;
+  margin-right: 0;
+
+}
+
+/* Message */
+.message {
+  width: 350px;
+  max-width: 90%; /* Limite la largeur des messages pour éviter l'étirement */
+  padding: 20px;
+  background-color: #f1f0f0;
+  border-radius: 10px;
+  font-size: 13px;
+  word-wrap: break-word;
+}
+
+.myMessage {
+  background-color: #ffffff; /* Couleur différente pour les messages de l'utilisateur */
+  border: 1px solid rgb(230, 230, 230);
+}
+
+/* Pour afficher le nom de l'expéditeur */
+.senderName {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+
+  
+}
+
+/* Image de profil */
+.profilePhoto_message {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-top: 38px;
+}
+
+/* Contenu du message */
+.message_content {
+  margin: 0;
+  font-weight: 100;
+}
+
+/* Messages de l'utilisateur alignés à droite */
+.myMessage {
+  text-align: right;
+  align-self: flex-end;
+  letter-spacing: 0.1px;
+}
+.timestamp {
+  font-size: 0.6rem;
+  color: #777;
+  margin-top: 5px;
+  position: relative;
+  top: -5px;
+  left: 5px;
+
+}
+/* Messages reçus alignés à gauche */
+.otherMessage {
+  text-align: left;
+  align-self: flex-start;
+  border: 1px solid rgb(197, 197, 197);
+  letter-spacing: 0.1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal_container_profile{
+  position: fixed;
+  background-color: hsla(0, 0%, 100%, 0.897);
+  border: 1px solid rgba(0, 0, 0, 0.215);
+  border-radius: 8px;
+  padding: 0px;color: #171717;
+  width: 400px;
+  height: 520px;
+  max-height:520px ;
+  top:29%;
+  left: -410px;box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+@media screen and (min-width: 1600px) {
+  .modal_container_profile{
+    position: fixed;
+    top: 36%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .modal_container_profile{
+    position: fixed;
+    top: 43%;
+  }
+}
+
+
+.messagesContainer{
+  color: #171717;
+  position: relative;
+  font-size: 15px;
+  height: 75%;
+  max-height: 75%;
+  overflow-y: auto;
+  width: 390px;
+  z-index: 150;
+  padding: 5px;
+  top: 0px;
+  background-color: hsla(0, 0%, 100%, 0.393);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.top_message2{
+  display: flex;
+  text-align: start;
+  justify-content: start;
+  align-items: baseline;
+  background-color: #ffffffa8;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.modal_close_btn_message{
+  position: relative;
+  top: 10px;
+  width:20px;
+  height: 20px;
+  border: none;
+  transition: transform 0.1s;
+  background: none;
+  color: grey;
+  font-family:'Inter','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  margin-right: 15px;
+}
+.modal_close_btn_message:hover{ 
+  transform: scale(1.15);
+}
+
+.disscussion_avec{
+  padding-bottom: 10px;
+  font-weight: 600;
+  position: relative;
+  top: 12px;
+ margin-right: 5px;
+  }
+  
+  .role_avec{
+    padding-bottom: 10px;
+    font-weight: 100;
+    font-size: 10px;
+    background-color: rgba(128, 128, 128, 0.319);
+    height: max-content;
+    padding: 4px;
+    border-radius: 10px ;
+    color: rgb(66, 66, 66);
+    position: relative;
+    top: 11px;
+  }
+
+
+
+  
+.envoie_div{
+  position: absolute;  /* Positionne la div de manière absolue par rapport au parent */
+  bottom: 0;           /* Assure que la div est collée au bas du parent */
+  left: 0;
+  right: 0;
+  top: 445px;
+  display: flex;
+  padding: 0px;
+}
+.envoie_div div{
+  background-color: rgb(221, 221, 221);
+  width: 380px;
+max-width: 380px;
+min-width: 380px;
+height: 80px;
+max-width: 80px;
+min-height: 80px;
+padding: 5px;
+position: relative;
+top: -15px;
+left: 10px;
+border-radius: 5px;
+}
+.textarea{
+  background-color: rgb(221, 221, 221);
+color: #171717;
+top: 0;
+width: 280px;
+max-width: 280px;
+min-width: 280px;
+height: 60px;
+max-width: 60px;
+min-height: 60px;
+border-radius: 5px;
+border:none; 
+padding: 10px;
+outline: none; /* Supprime le contour au focus */
+resize: none; /* Empêche le redimensionnement */
+overflow: hidden; /* Supprime la barre de défilement */
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Scrollbar personnalisée pour Webkit (Chrome, Safari, etc.) */
+.textarea::-webkit-scrollbar {
+  width: 8px; /* Réduit la largeur du scrollbar */
+}
+
+.textarea::-webkit-scrollbar-track {
+  background: #f7f7f7; /* Couleur de fond du track (où se déplace le scrollbar) */
+  border-radius: 10px; /* Coins arrondis pour le track */
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3; /* Couleur du scrollbar */
+  border-radius: 10px; /* Coins arrondis pour le scrollbar */
+  border: 2px solid #f7f7f7; /* Ajouter un peu d'espace autour du scrollbar */
+}
+
+.textarea:focus {
+  outline: none; /* Aucun contour lors du focus */
+}
+
+.sendButton{
+  margin-left: -80px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  position: relative;
+  top: 5px;
+  width: 80px;
+  max-width: 80px;
+  min-width: 80px;
+  background-color: rgb(0, 0, 0);
+  transition: background-color 0.2s, transform 0.2s;
+}
+.sendButton:hover{
+  transform: scale(1.03);
+}
+
+
+

@@ -1,0 +1,715 @@
+.Div_all_obj{
+    color: black;
+    font-family: 'Inter','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 1500px;  
+    max-width: 1500px;
+    height: auto;
+    position: relative;
+    top: 20px;
+}
+.header{
+display: flex;
+}
+
+.input_recherche{
+    background-color: rgb(199, 199, 199);
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 10px;
+    width: 370px;
+    height: 38px;
+    padding: 15px;
+    color: rgb(48, 48, 48);
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-image: url('/search.png');
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Positionne l'icône */
+    background-size: 12px 12px; /* Ajuste la taille de l'icône */
+    padding-left: 30px; /* Crée un espace pour l'icône */
+}
+
+
+.container{
+    position: relative;
+    display:grid;
+    left: 1320px;
+    top: 27px;
+    margin-right: 15px;
+}
+.container button{
+    padding: 8px;
+    color: black;
+    font-family: 'Inter', serif;
+    border: 1px solid rgba(0, 0, 0, 0.268);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.644);
+}
+
+.container strong{
+    font-weight: 200;
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container strong:nth-child(2){
+    margin-left: 10px;
+}
+
+.filtre {
+    display: none; /* Masque les filtres par défaut */
+    position: absolute;
+    width: auto;
+    top: 100%;
+    left:0px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid aliceblue;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border: 1px solid;
+}
+.container:hover .filtre {
+    display: grid; /* Affiche les filtres au survol de la container */
+}
+
+.filtre a {
+    background-color: transparent;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filtre a:hover {
+    background-color: #e0e0e0; /* Couleur de fond au survol */
+}
+
+.activeFilter {
+    background-color: #007bff; /* Couleur de fond pour le filtre actif */
+    color: white; /* Couleur du texte pour le contraste */
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.filtre div:nth-child(2){
+    padding-left: 15px;
+    margin-left: 25px;
+    margin-right: 20px;
+    border-left: 1px solid;
+    }
+    
+    .filtre div:nth-child(2) div{
+      margin-top: -18px;
+        }
+    
+    .filtre a ,.filtre2 a {
+        display: block;
+        padding: 5px;
+        font-size: 11px;
+        color:black;
+        text-decoration: none;
+        transition: background-color 0.1s;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        width: max-content;
+    }
+
+    .titre{
+        position: relative;
+        top: 40px;
+        left: 2px;
+        font-weight: 100;
+        font-size: 14px;
+    }
+
+.div_bas{
+    position: relative;
+    top: 110px;
+    width: 1500px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-template-rows: repeat(1, 400px);  /* 2 lignes de 200px */
+    gap:0px; /* Espace entre les éléments */
+    flex-wrap: wrap;
+    
+}
+
+.div_bas2{
+    position: relative;
+    top: 110px;
+    width: 1500px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 colonnes égales */
+    grid-template-rows: repeat(1, 350px);  /* 2 lignes de 200px */
+    gap:0px; /* Espace entre les éléments */
+    flex-wrap: wrap;
+    
+}
+.projet_asso{
+    display:grid;
+    width: calc(93% - 5px);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    height:360px ;
+    max-height: 380px;
+    min-height: 380px;
+ 
+}
+
+.projet_asso td:nth-child(1){
+    width: 200px;
+    height: 250px;
+    border-radius: 15px ;
+}
+
+.projet_asso td:nth-child(3) p{
+  font-size: 17px;
+  color: rgba(26, 26, 26, 0.877);
+  margin-bottom: -15px;
+}
+.projet_asso td:nth-child(3) p:hover{
+color: blue;
+}
+
+.projet_asso a{
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:grey;
+    transition: font-size 0.1s, color 0.3s;
+}
+.projet_asso a:hover{
+color: rgb(5, 55, 255);
+font-size: 14px;
+}
+
+.projet_asso td:nth-child(7) p{
+    font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(33, 33, 33, 0.834);
+    max-height:10px ;
+    margin-bottom: 100px;
+    
+  }
+  .lien{
+    width: 13px;
+    height: 13px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    margin-right: 5px;
+  }
+
+ 
+  .projet_asso td:nth-child(11){
+    background-color: rgba(179, 179, 179, 0.401);
+    color: rgb(84, 84, 84);
+    padding: 5px;
+    font-size: 13px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+  }
+
+  .projet_asso td:nth-child(12) {
+       display:flex;
+   justify-content: end;
+   text-align: end;
+   align-items: end;
+   position: relative;
+   top: -26px;
+  }
+  .projet_asso td:nth-child(12) p{
+    background-color: rgba(0, 180, 66, 0.33);
+    color: rgb(84, 84, 84);
+    padding: 5px;
+    font-size: 13px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+
+  }
+
+  .projet_asso td button{
+  position: relative;
+  }
+
+  .pagination{
+    position: relative;
+    top: 110px;
+  }
+
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.pagination span{
+    position: relative;
+    top: 7px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    background-color: #0066d2;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+.pagination .activeButton {
+    background-color: #003267;
+    color: #ffffff;
+    border-color: black;
+}
+
+/* Conteneur de la barre de progression */
+.progressBarContainer {
+    width: 260%;
+    height: 7px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  /* Barre de progression */
+  .progressBar {
+    height: 100%;
+    background-color: #4bd36d; /* Couleur verte */
+    transition: width 0.5s ease; /* Animation fluide */
+    border-radius: 10px 0 0 10px; /* Coins arrondis à gauche */
+    
+  }
+
+  .progression{
+    font-size: 10px;
+    position: relative;
+    left: 0px;
+    margin-bottom: -10px;
+    top: -5px;
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*---------PAGE OBJECTIF 2 --------------------------------------------------------------------------*/
+
+
+  .div_all_objectif{
+  color: black;
+    font-family: 'Inter','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 1500px;  
+    max-width: 1500px;
+    height: auto;
+    position: relative;
+    top: 20px;
+  }
+
+  .btn_ajt_obj{
+    position: fixed;
+    top: 85%;
+    left:90%;
+    z-index: 80;
+  }
+  .btn_ajt_obj button{
+    background-color: blue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 12px; 
+    padding-left:  22px;
+    padding-right: 22px;
+    font-size: 30px;
+    border-radius: 50px;
+    border: none;
+    transition: transform 0.1s;   
+ }
+
+ .btn_ajt_obj button:hover{
+    transform: scale(1.1);
+ }
+
+
+
+
+ 
+/*-----PARTIE MODAL --------*/
+.modal_container_profile{
+    position: fixed;
+    display: grid;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffffb8;
+    border-radius: 10px;
+    padding: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+  }
+  
+.modal_container_rec_offre{
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 10, 0.2);
+    width: 600px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.modal_container_rec_offre label{
+font-size: 13px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+position: absolute;
+left: 1115px;
+
+}
+.modal_container_rec_offre label strong{
+    color: red;
+}
+.modal_container_rec_offre label i{
+max-width: 100px;
+
+}
+
+.modal_container_rec_offre input{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 380px;
+    height: 38px;
+    padding: 15px;
+    color: black;
+   
+}
+.modal_container_rec_offre textarea{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 370px;
+    max-width:370px ;
+    min-width: 370px;
+    height: 80px;
+    max-height: 80px ;
+    min-height: 80px ;
+    padding: 15px;
+    color: black;
+   
+}
+
+.modal_container_rec_offre button{
+    padding: 10px;
+    border-radius:5px ;
+    background-color: rgb(144, 0, 255);
+    border:none;
+    margin-right: 10px;
+    position: relative;
+    left: 0px;
+}
+
+.fileUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.customFileLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    width: 380px;
+    border: 2px dotted rgb(22, 52, 136);
+    border-radius: 5px;
+    background-color: rgba(22, 52, 136, 0.059);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.customFileLabel:hover {
+    background-color: rgba(22, 52, 136, 0.1);
+    border-color: rgb(22, 52, 136);
+}
+
+.uploadButton {
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.fileName {
+    font-size: 12px;
+    color: #555;
+}
+
+.err_file {
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}
+
+/* Masquer l'input file */
+.modal_file_choice {
+    display: none;
+}
+.err_message{
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    position: relative;
+    top: -10px;
+}
+/*FIN*/
+
+
+
+.objectif_asso{
+    display:grid;
+    width: calc(100% - 38px); /* 25% pour afficher 4 vidéos par ligne */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 90px;
+    height:280px ;
+
+}
+
+.objectif_asso td:nth-child(1){
+ font-size: 22px;
+}
+
+.objectif_asso td:nth-child(3) {
+  font-size: 14px;
+  color: rgba(26, 26, 26, 0.877);
+  position: relative;
+  top: -10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+
+
+.objectif_asso a{
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:grey;
+    transition: font-size 0.1s, color 0.3s;
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 250px;
+    position: relative;
+    top: 10px;
+}
+
+.objectif_asso a:hover{
+color: rgb(5, 55, 255);
+font-size: 14px;
+}
+
+.objectif_asso td:nth-child(5) p{
+    font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(33, 33, 33, 0.834);
+    max-height:10px ;
+    margin-bottom: 100px;
+    
+  }
+
+.objectif_asso td:nth-child(9) button{ 
+    background-color: rgba(255, 0, 0, 0.147);
+    border: none;
+    padding: 5px;
+    padding-left:7px ;
+    padding-right:7px ;
+    border-radius: 5px;
+    position: relative;
+    top: -35px;
+    transition: transform 0.2s;
+}
+.objectif_asso td:nth-child(9) button:hover{
+    background-color: rgba(255, 0, 0, 0.786);
+    transform: scale(1.1);
+ }
+
+.trash{
+    width: 15px;
+    height: 15px;
+    filter: invert();
+    
+}
+.pin{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 310px;
+    top: -20px;
+    margin-bottom: -20px;
+    transition: transform 0.2s;
+}
+
+.pin:hover{
+transform: scale(1.4);
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1700px) and (max-width: 1800px) {
+    .div_bas{
+        grid-template-columns: repeat(4, 1fr); /* 3 colonnes égales */
+        grid-template-rows: repeat(1, 440px);  /* 2 lignes de 200px */
+        gap:0px; /* Espace entre les éléments */
+        width: 1630px;
+        position: relative;
+        left: -60px;
+    }
+    .div_bas2{
+        width: 1630px;
+    }
+    .objectif_asso{
+        position: relative;
+        left: -60px;
+    }
+    .pin{
+        left: 340px;
+    }
+    .objectif_asso a{
+        position: relative;
+        left: 25px;
+    }
+
+    
+
+
+    .projet_asso{
+        min-height: 420px;
+    }
+    .projet_asso td:nth-child(11){
+        position: relative;
+        top: 40px;
+    }
+    .projet_asso td:nth-child(12){
+        margin-top: 40px;
+    }
+    .progressBarContainer {
+        max-width: 205%;
+      position: relative;
+      top: 40px;
+      margin-bottom: 8px;
+    }
+    .progression{
+       position: relative;
+       top: 35px;
+    } 
+    .input_recherche{
+        position: absolute;
+        left: -54px;}
+    .titre{
+        position: relative;
+        left: -50px;}
+    .container{
+    margin-left: 70px;
+    }
+}
+
+
+
+@media (min-width: 1800px) and (max-width: 7000px) {
+
+    .div_bas{
+        grid-template-columns: repeat(5, 1fr); /* 3 colonnes égales */
+        grid-template-rows: repeat(1, 440px);  /* 2 lignes de 200px */
+        gap:0px; /* Espace entre les éléments */
+        width: 1850px;
+        position: relative;
+        left: -170px;
+    }
+    .div_bas2{
+        grid-template-columns: repeat(5, 1fr); /* 3 colonnes égales */
+        width: 1860px;
+    }
+    .objectif_asso{
+        position: relative;
+        left: -170px;
+    }
+    .pin{
+        left: 310px;
+    }
+    .objectif_asso a{
+        position: relative;
+        left: -5px;
+    }
+
+
+
+
+    
+    .projet_asso{
+        min-height: 430px;
+    }
+    .projet_asso td:nth-child(11){
+        position: relative;
+        top: 50px;
+    }
+    .projet_asso td:nth-child(12){
+        display: none;
+    }
+    .progressBarContainer {
+        max-width: 180%;
+      position: relative;
+      top: 50px;
+      margin-bottom: 8px;
+    }
+    .progression{
+       position: relative;
+       top: 45px;
+    } 
+    .input_recherche{
+        position: absolute;
+        left: -170px;}
+    .titre{
+        position: relative;
+        left: -165px;}
+    .container{
+    margin-left: 180px;
+    }
+}
+
+
+
+

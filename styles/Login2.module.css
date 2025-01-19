@@ -1,0 +1,323 @@
+.Div_all_Login {
+    display: flex; /* Utilisation de Flexbox pour aligner les enfants */
+    justify-content: center; /* Centrage horizontal des enfants */
+    align-items: stretch; /* Assure que les colonnes prennent toute la hauteur */
+    width: 100%;
+    max-width: 2000px;
+    height: 100vh; /* Prend toute la hauteur de la vue */
+    margin: 0 auto; /* Centrage horizontal */
+    box-sizing: border-box; /* Pour inclure padding/borders dans les dimensions */
+     color: white;
+    font-weight: 100;
+font-family:'Inter',sans-serif,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+background-color: black;
+}
+
+.Partie_droite,
+.Partie_gauche {
+    flex: 1; /* Divise l'espace également entre les deux colonnes */
+    height: 100%;
+    padding: 2rem; /* Espacement interne relatif */
+}
+
+.Partie_droite {
+    text-align: center; /* Texte centré */
+    background-color: #000000; /* Exemple de couleur */
+}
+
+.profile_pic {
+    width: 350px; /* Largeur fixe */
+    height: 390px; /* Hauteur fixe */
+    object-fit: cover; /* Préserve les proportions tout en remplissant le conteneur */
+    object-position: center; /* Centre l'image si elle dépasse */
+    display: block; /* Empêche tout comportement inline */
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+.Partie_gauche {
+    background: url('/blurry-neon-light-background2.jpg');
+    background-size:cover ;
+    background-position: center;
+    border-radius: 10px;
+    border: 1px solid rgba(21, 21, 21, 0.523);
+    justify-content: center;
+    text-align: center;
+    word-spacing:0.7px;
+}
+.Partie_gauche p{
+    font-family:sans-serif,'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.Partie_gauche p:nth-child(2){
+    font-size: 15px;
+    color: #d9d9d9;
+}
+.Partie_gauche h1{
+  font-size: 30px;
+}
+
+
+
+.logo{
+    width: 160px;
+    height: 70px;
+    filter: invert();
+}
+.div_in_gauche{
+    position: relative;
+    top: 240px;
+}
+.div_grid{
+    display: grid;
+    justify-content: center;
+}
+.div_grid .div1 {
+ color: #a3a3a3;
+ justify-content: start;
+ text-align: start;
+}
+.div_grid .div1 p{
+    background-color: rgba(49, 49, 49, 0.788);
+    padding: 20px;
+    border-radius: 10px;
+    width: 330px;
+     }
+     .div_grid .div1 label{
+       padding: 2px;
+       padding-left: 5px;
+       padding-right: 5.5px;
+       background-color: rgb(71, 71, 71);
+       color: white;
+       border-radius: 30px;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       margin-right: 5px;
+       font-size: 10px;
+         }
+.div_grid .div1:nth-child(1) p{
+  background-color: white;
+  color: #000000;
+  border-radius: 10px;
+  font-weight: 600;
+   }
+
+   .div_grid .div1:nth-child(1) label{
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5.5px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 5px;
+      }
+
+
+
+
+
+
+
+
+
+
+.Partie_droite p{
+font-size: 15px;
+font-weight: 100;
+color: grey;    
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Partie_droite h1{
+   font-weight: 100;
+   font-size: 33px;
+   margin-bottom: 5px;
+    }
+.div_in_droite{
+    position: relative;
+    top: 50px;
+}
+.form_data{
+    display: grid;
+    justify-content: center;
+    text-align: start;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+
+    position: relative;
+    top: 150px;
+}
+.form_data label{
+   margin-bottom: 5px;
+    }
+.form_data input{
+padding: 12px;
+border-radius: 5px;
+border: none;
+background-color: rgb(37, 37, 37);
+width: 300px;
+margin-bottom: 5px;
+margin-top: 3px;
+}
+
+.form_data button{
+    background-color: white;
+    border: none;
+    color: #000000;
+    padding: 13px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.1s;
+    
+}
+.form_data button:hover{
+transform: scale(1.05);
+}
+.Partie_droite h5{
+    position: relative;
+   top: 160px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    color: grey;
+    font-weight: 100;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.div_pass a{
+font-size: 13px;
+color: blue;
+border-bottom: 1px solid;
+position: relative;
+left: 150px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+    .Partie_gauche{
+        display: none;
+    }
+}
+
+
+
+
+
+
+.modal_container_profile{
+    position: fixed;
+    display: grid;
+    top: 50%;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    background-color: #c9c9c917;
+    border-radius: 10px;
+    padding: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+    color: black;
+    overflow-y: hidden;
+    height: 100%;
+    max-height: 870px;
+    width: 300%;
+    
+  }
+  
+  .modal_container_rec_offre{
+    position: relative;
+    top: 50px;
+    left: 300px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 10, 0.2);
+    width: 400px;
+    height: 250px;
+    text-align: start;
+  }
+  .modal_container_rec_offre input{
+   background-color: white;
+   color: #1a1a1a; 
+   border: 1px solid ;
+   padding: 5px;
+   border-radius: 5px;
+  }
+  
+  .modal_container_rec_offre h2{
+    margin-bottom: 15px;
+    text-align: start;
+    }
+  
+  .modal_container_rec_offre p{
+    font-size: 13px;
+    width: 350px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: start;
+    color: rgb(56, 56, 56);
+    }
+  
+  
+  
+      
+  .modal_container_rec_offre button:nth-child(6){
+   background: none;
+   color: rgb(255, 255, 255);
+   border: none;
+   background-color: blue;
+   padding: 10px;
+   border-radius: 5px;
+   
+  
+  }
+  .modal_container_rec_offre button:nth-child(7){
+    background: none;
+    color: blue;
+    border: none;
+    position: relative;
+    top: 5px;
+    left: 230px;
+   }
+  
+  
+
+   .modal_container_rec_offre button:nth-child(3){
+    background-color: white;
+    border: none;
+    color: blue;
+    
+     }
+     .modal_container_rec_offre button:nth-child(5){
+        position: relative;
+        top: 20px;
+        background-color: white;
+        border: none;
+        color: blue;
+       }
+
+  
+  .modal_container_rec_offre button:nth-child(3):hover{
+  transform: scale(1.03);
+  font-weight: 600;
+  
+   }
+   .modal_container_rec_offre button:nth-child(5):hover{
+    transform: scale(1.1);
+     }
+  
+  
+  
+  .modal_container_rec_offre button a{
+    border-bottom: 1px solid;
+   }
+   

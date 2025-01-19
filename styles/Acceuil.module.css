@@ -1,0 +1,1086 @@
+
+.hiddenElement {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visibleElement {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* card 1 a gauche*/
+.Part1{
+    display: flex;
+    margin-bottom: -170px;
+}
+
+
+
+.div_titre{
+    position: relative;
+    left: 340px;
+    top: 120px;
+
+}
+
+
+.titre{
+    color: rgba(0, 0, 0, 0.805);
+    font-family: "Inter", sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+   padding-bottom:20px ;
+   justify-content: center;
+   text-align: center;
+   margin-bottom: -20px;
+   
+}
+
+
+.stat{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -80px;
+    left: 600px;
+    transform: rotate(-20deg);
+}
+
+
+.new_way{
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(46, 89, 162);
+    background-color: rgba(99, 185, 255, 0.632);
+    padding: 5px;
+    padding-left: 10px ;
+    padding-right: 10px;
+    border-radius: 8px;
+    width: max-content;
+    position: relative;
+    left: 325px;
+    top: -210px;
+}
+
+.crafted{
+    color: rgba(128, 128, 128, 0.847);
+    font-weight: 100;
+    font-size: 17px;
+    position: relative;
+    left: 10px;top: -30px;
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+}
+
+.screen{
+    position: absolute;
+    z-index: -1;
+    left: 230px;
+    top: -50px;
+    width: 350px;
+    height: 350px;
+    filter: brightness(1.1);
+    rotate:calc(-35deg);
+
+}
+
+
+.checkbox{
+    margin-top: 20px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    border-top: 1px solid rgba(128, 128, 128, 0.229);
+    justify-content: center;
+}
+
+.checkbox div{
+    margin-right: 120px;
+    display:flex;
+    margin-top: 20px;
+    position: relative;
+    left: 50px;
+}
+
+
+.checkbox label{
+    background-color: rgb(0, 89, 255);
+    box-shadow: 2px 1px 1px black;
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 11px;
+    position: relative;
+    top: -2px;
+    width: 20px;
+    height: 20px;
+}
+.checkbox label p{
+    position: relative;
+    top: -4px;
+    
+}
+
+.checkbox p{
+    color: black;
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+.text_right_checkbox{
+    margin-left: 10px;
+}
+
+
+
+
+
+.intro_but{
+    position: relative;
+    top: 10px;   
+    left: 0px;
+    margin-bottom: 20px;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.intro_but input{
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px black solid;
+    color: grey;
+    background-color: rgb(255, 255, 255);
+    width: 210px;
+}
+
+.intro_but button{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0, 89, 255);
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    transition:transform 0.2s, background-color 0.2s, color 0.2s, border 0.2s;
+}
+
+.intro_but button:nth-child(1):hover{
+  transform: scale(1.1);
+}
+.intro_but button:nth-child(2):hover{
+    transform: scale(1.1);
+    box-shadow: 5px 1px 1px rgb(0, 0, 0);
+  }
+
+
+
+.intro_but button:nth-child(2){
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    margin-left: 15px;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* card1 a droite*/
+
+
+.image1{
+    border: 2px solid;
+    padding: 15px;
+    color: black;
+    position: relative;
+    left: 820px;
+    top: -255px;
+    width: 290px;
+    border-radius: 10px;
+    border-bottom-left-radius: 55px;
+    transform: translateY(-50px);  /* Initially positioned slightly upward */
+    animation: slideDown 0.6s forwards;  /* Trigger the animation */
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start 50px above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  /* End at its original position */
+    }
+}
+
+.user_role{
+font-weight: 100;
+font-size: 12px;
+}
+
+.image1 h2{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+.image1 h5{
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    font-size: 20px;
+}
+
+.part_dessous{
+   /* background-color: rgb(145, 115, 241);*/
+    background-color: rgb(231, 236, 255);
+    border: 1px solid black;
+    box-shadow: 8px 8px 1px black;
+    color: rgb(0, 0, 0);
+    width: 290px;
+    height: 170px;
+    position: relative;
+    top: 10px;
+    left: -19px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.img_card{
+    display: inline-flex;
+    position: relative;
+    left: 10px;
+    top: 25px;
+}
+
+.img_card p{
+    position: relative;
+    top: 5px;
+    left: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    
+}
+
+.profile{
+    border: 0.1px solid black;
+    border-radius: 50px;
+    padding: 1px;  
+    width: 90px;
+    height: 90px;
+    
+}
+
+
+
+.info_card div{
+
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: rgb(0, 0, 0);
+font-weight: 500;
+font-size: 12px;
+}
+.sous_info_card{
+    position: relative;
+    top:-35px;
+    left: 90px;
+}
+.sous_info_card div{
+    display: flex;
+    margin-right: 0px;
+    margin-left: 25px;
+    height: 30px;
+
+}
+.sous_info_card div p{
+    position: relative;
+    right: -5px;
+}
+.icon{
+width: 18px;
+height: 18px;
+}
+
+
+.dessous_card{
+    color: rgb(0, 0, 0);
+    position: relative;
+    display: flex;
+    top: -20px;
+    left: 15px;
+    font-size: 12px;
+}
+.dessous_card p{ display: flex;
+    font-weight: 600;
+    height: max-content;
+}
+.dessous_card h3{
+    font-size: 11px;
+    font-weight: 100;
+    position: absolute;
+    top: 1px;
+    left: 55px;
+}
+
+.dessous_card button{
+    padding: 8px;
+    padding-left: 12px ;
+    padding-right: 12px;
+    position: relative;
+    top: -12px;
+    left: 130px;
+    background-color: white;
+    border: none;
+    color: black;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 15px;
+    transition: padding 0.1s;  /* Specify which properties to animate */
+}
+
+.dessous_card button:hover{
+    padding: 9px;
+    padding-left: 14px ;
+    padding-right: 14px;
+}
+
+
+
+
+
+/*  card2 a droite*/
+
+
+
+.card2{
+    position: relative;
+    left: -730px;
+    top: 300px;
+    z-index: -1;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 100px;
+    width: 270px;
+    padding: 10px;
+    animation: slideDown 0.8s forwards;  /* Trigger the animation */
+}
+
+.card2_div2{
+    border: 1px solid black;
+    height: 125px;
+    width: 270px;
+    position: relative;
+    top: 15px;
+    left: -15px;
+    background-color:white ;
+    box-shadow: 8px 8px 1px black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+.Titre_card2{
+    display: flex;
+    color: black;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    top:5px ;
+    left: 0px;
+}
+.Titre_card2 p:nth-child(2){
+    position: relative;
+     left: 190px;
+     top: -3px;
+}
+
+.video_card2{
+    position: relative;
+    top: 15px;
+    left: 5px;
+   /* border: 1px solid black;*/
+    width: 130px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.279);
+}
+
+
+.video_card2_titre{
+    position: relative;
+    top:-15px ;
+    left: 150px;
+    width: 100px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.368);
+}
+
+.video_card2_titre2{
+    position: relative;
+    top:-10px ;
+    left: 150px;
+    width: 70px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.368);
+}
+
+.flexing_profile_titre{
+    display: flex;
+    position: relative;
+    top: -95px;
+    left: 140px;
+}
+
+
+.profile_card2{
+background-color: rgba(107, 57, 157, 0.774);
+position: relative;
+top: 25px;
+left: 5px;
+border-radius: 50px;
+width: 20px;
+height: 20px;
+}
+.profile_titre{
+    position: relative;
+    top:30px ;
+    left: 10px;
+    width: 60px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.368);
+}
+
+
+
+.profile_titre2{
+    position: relative;
+    top:38px ;
+    left: -50px;
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.368);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+.Big_Part2{
+ 
+    position: relative;
+    top: 290px;
+    height: 320px;
+    width: 150%;
+    left: -200px;
+   /* background-color: rgb(237, 216, 255);*/
+  /* background-color: rgba(113, 79, 223, 0.285);*/
+    color: black;
+}
+
+.middle_page{
+  
+    height: 280px;
+    width: 1520px;
+    position: relative;
+    top: 30px;
+    left: 165px;
+    padding: 20px;
+    
+    font-family: "Inter", sans-serif;
+} 
+
+.Big_Part2_Titre{
+  
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    top: 50px;
+    left: 630px;
+    word-spacing: 5px;
+}
+
+.Big_Part2_Titre p{
+    margin-top: 20px;
+    width: 600px;
+    font-weight: 100;
+    font-size: 13px; word-spacing: 0.5px;
+}
+
+
+
+
+
+
+
+.middle_page_bush{
+    position: absolute;
+    width:300px ;
+    height: 300px;
+    left: 1250px;
+    top: -90px;
+}
+.middle_page_bush2{
+    position: absolute;
+    width:180px ;
+    height: 180px;
+    left: 1350px;
+    top: -20px;
+}
+.about{
+    position: absolute;
+    left: 650px;
+    top: 30px;
+    font-weight: 100;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(51, 51, 51);
+}
+.phoo{
+    position: absolute;
+    left: 160px;
+    top: -40px;
+    width: 350px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.pho{
+    position: absolute;
+    left: 480px;
+    top: -20px;
+    width: 100px;
+    height: 90px;
+    border-radius: 15px;
+    border:1px solid rgb(228, 228, 228);
+}
+.shop{
+    position: absolute;
+    left: 100px;
+    top: 300px;
+    width: 140px;
+    height: 140px;
+    border-radius: 15px;
+
+}
+
+/*---------------------------------------------------------------------*/
+
+
+
+
+
+
+.Big_Part3{
+    position: relative;
+    top: 520px;
+    height: 520px;
+    width: 150%;
+    left: -200px;
+    color: black;
+    padding: 20px;
+}
+
+.middle_Big_Part3{
+    height: 480px;
+    width: 1520px;
+    position: relative;
+    left: 165px;
+    padding: 40px;
+    display: flex;
+    font-family: "Inter", sans-serif;
+    display: flex;
+}
+
+.middle_Big_Part3 h1{
+    position: relative;
+    left: 120px;
+    font-size: 45px;
+}
+.middle_Big_Part3 a{
+    position: relative;
+    top: 30px;
+    font-size: 14px;
+    left: 120px;
+    border-bottom: 1px solid;
+    transition: font-size 0.2s; /* Animation sur le width et height */
+}
+
+.middle_Big_Part3 a:hover{
+   color: rgb(53, 53, 53);
+   font-size: 15px;
+}
+
+.gauche_BigPart3{
+width: 700px;
+height: 450px;
+}
+
+.card_BigPart3{
+    border: 1px rgb(181, 181, 181) solid;
+    background-color: rgba(20, 18, 26, 0.941);
+    position: relative;
+    top: 140px;
+    left: 120px;
+    height: 150px;
+    width: 340px;
+    border-radius: 15px;
+    padding: 15px;
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.card_BigPart3:hover{
+    background-color: rgba(20, 18, 26, 0.888);
+    border: 1px solid black;
+}
+
+.image_big3{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px white solid;
+    padding: 2px;
+}
+
+.card_BigPart3 h1{
+    color: white;
+    font-size: 16px;
+    font-weight: 100;
+    position: relative;
+    top: -45px;
+    left: 65px;
+}
+
+.card_BigPart3 h5{
+    font-size: 12px;
+    font-weight: 100;
+    position: relative;
+    top: -40px;
+    left: 65px;
+    color: rgb(185, 185, 185);
+}
+
+.card_BigPart3 p{
+    font-size: 12px;
+    font-weight: 100;
+    position: relative;
+    width: 300px;
+    top: -20px;
+    left: 5px;
+}
+
+.card_BigPart3 .datee{
+    font-size: 10px;
+   position: relative;
+   left: 250px;
+   color: aliceblue;
+}
+
+
+
+
+
+
+
+
+.middle_g_d{
+    position: absolute;
+    left: 450px;
+    top: 137px;
+    width: 90px;
+    height: 90px;
+
+}
+
+
+
+
+
+
+
+
+.droite_BigPart3{
+   
+    width: 700px;
+    height: 450px;
+    padding: 0px;
+}
+
+.in_div_droite_BigPart3{
+    background-color: rgb(0, 153, 255);
+    width: 600px;
+    height: 490px;
+    position: relative;
+    left: 50px;
+    top: -10px;
+    border-radius: 15px;
+}
+
+.card_tablette{
+    width: 450px;
+    height: 400px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    position: relative;
+    top:40px;
+    left: 75px;
+    box-shadow: 8px 8px 1px black;
+}
+.searchNothing {
+    width: max-content;
+    height: max-content;
+}
+
+.searchNothing input{
+   background-color: rgb(245, 250, 255);
+   border: 1px solid black;
+   color: black;
+   width: 400px;
+   height: 30px;
+   position: relative;
+   top:20px;
+   left: 20px;
+   border-radius: 10px;
+   padding: 10px;
+
+}
+
+
+.photo_profile{
+    border: 1px solid;
+    position: relative;
+    top: 80px;
+    height: 270px;
+    width: 200px;
+    left: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 1px black;
+}
+.photo_profile h1{
+    font-size: 20px;
+    font-weight: 100;
+    position: relative;
+    top: -40px;
+    left: 0px;
+}
+.photo_profile h5{
+    font-size: 15px;
+    font-weight: 100;
+    position: relative;
+    top: -10px;
+    left: 15px;
+}
+
+.photo_profile h4{
+    font-size: 9px;
+    font-weight: 100;
+    position: relative;
+    left: 66px;
+    top:12px;
+    color: grey;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.photo_profile h3{
+    font-size: 9px;
+    font-weight: 100;
+    position: relative;
+    left: 169px;
+    top:-15px;
+    color: rgb(91, 107, 179);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.ph_pro_flex{
+    display: flex;
+}
+
+.ph_pro_flex p{
+    font-size: 10px;
+    font-weight: 100;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    left: 20px;
+    top: 30px;
+    height: 30px;
+    padding: 6px;
+    }
+    
+.photo_profile1{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    position: relative;
+    top: 25px;
+    left: 10px;
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+.options_div{
+    width:190px;
+    height: 270px;
+    position: relative;
+    left: 240px;
+    top:-190px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.options_div h1{
+    font-size: 20px;
+    font-weight: 100;
+    position: relative;
+    left: 0px;
+    top:-40px;
+}
+
+.options_div div{
+    display: flex;
+    font-size: 12px;
+    padding: 13px;
+    
+}
+.options_div div label{
+    background-color: rgb(79, 187, 223);
+    box-shadow: 2px 1px 1px black;
+    border-radius: 6px;
+    padding: 3.5px;
+    font-size: 11px;
+    position: relative;
+    top: -2px;
+    width: 15px;
+    height: 15px;
+    
+}
+.options_div label p{
+    position: relative;
+    top: -4px;
+    
+}
+
+
+.options_div p:nth-child(2){
+    font-weight: 500;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    top: -1px;
+    left: 10px;   
+}
+
+.options_div h5{
+    font-weight: 100;
+    font-size: 10px;
+    width: max-content;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    color: rgb(189, 123, 0);
+    background-color: rgba(255, 224, 166, 0.285);
+
+    position: relative;
+    top: 80px;
+    left: 15px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 440px) {
+
+    .titre{
+         font-size: 31px;
+         position: relative;
+         left: 90px; }
+    .stat{
+        display: none; }
+    .new_way{
+        top: -130px;
+        left: 220px; }
+    .crafted{
+        font-size: 13px;
+        left: 90px;
+        top: -45px;}
+    .intro_but{  top: -40px;left: 80px;font-weight: 600;}
+    .checkbox { display: none;}
+    .image1{display: none;}
+    .card2{display: none;}
+
+
+.Big_Part2{
+    width: 100%;
+}
+.phoo{
+    width: 130px;
+    height: 200px;
+    left: 460px;
+    top: 100px;
+}
+.pho{
+    top: 70px;
+    width: 50px;
+    height: 50px;
+}
+.shop{
+ display: none;
+}
+.about{
+    font-size: 14px;
+    top: 110px;
+    left: 620px;
+}
+
+.Big_Part2{
+   position: relative;
+   top:250px;
+}
+.Big_Part2_Titre{
+    width: 220px;
+    left: 600px;
+    letter-spacing: -0.1px;
+    word-spacing: 3px;
+    top: 120px;
+}
+.Big_Part2_Titre h1{
+    font-size: 25px;
+}
+
+.Big_Part2_Titre p{
+    width: 360px;
+    position: relative;
+    top: 50px;
+    left: -150px;
+    color: black;
+    font-size: 13px;
+    font-weight: 300;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Big_Part2_Titre p:nth-child(3){
+    display: none;
+}
+
+
+
+
+
+.Big_Part3{
+    width: 100%;
+    position: relative;
+    top: 450px;
+}
+
+.middle_Big_Part3{
+    display: grid;
+}
+.middle_Big_Part3 h1{
+    left: 400px;
+}
+.middle_Big_Part3 a{
+    left: 630px;
+    top: -25px;
+}
+.card_BigPart3{
+    left: 410px;
+    top: 20px;
+} 
+.middle_g_d{
+display: none;
+}
+
+.photo_profile h1{
+position: relative;
+left: 80px;
+top: -110px;
+}
+.droite_BigPart3{
+    position: relative;
+    left:350px;
+}
+.in_div_droite_BigPart3{
+    width: 360px;
+    color: black;
+}
+.card_tablette{
+    width: 290px;
+    position: relative;
+    left:30px;
+    top: 70px;
+    font-weight: 500;
+    height: 370px;
+}
+.searchNothing input{
+    max-width: 250px;
+}
+
+.photo_profile h3,.ph_pro_flex p,.photo_profile h4,.photo_profile h5{
+    font-weight: 500;
+}
+.photo_profile{
+width: 250px;
+top: 40px;
+}
+
+.options_div{
+    display: none;
+}
+}

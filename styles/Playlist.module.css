@@ -1,0 +1,212 @@
+.div_playlist_all{
+    width: 115%;
+    max-width: 2000px;
+    height: auto;
+    position: relative;
+    top: -30px;
+    margin: 0 auto; /* Centre la div horizontalement */
+    padding: 50px;
+    color: black;
+    display: flex;
+    
+}
+.video{
+    display: none;
+}
+.playlist {
+ 
+    width: 100%;
+    padding: 0px;
+    border-radius: 15px; /* La même valeur d'arrondi pour la div */
+   overflow: hidden;
+    height:auto;
+    overflow-x: hidden;
+    position: relative;
+    left: 0px;
+}
+
+.playlist h1{
+    position: relative;
+    top: -10px;
+    left: 20px;
+    font-family: 'Inter',sans-serif;
+    font-size: 35px;
+}
+
+
+
+
+.flexing p:nth-child(1) {
+    position: relative;
+    top: 0px;
+    margin-right: 5px;
+    font-size: 10px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column; /* Met le nom sous le titre */
+    justify-content: center; /* Centre les éléments verticalement */
+}
+
+.textContainer h2 {
+    font-size: 15px;
+    margin: 0 0 5px 0;
+    position: relative;
+    top: -15px;
+    width:160px ;
+    max-width: 160px;
+}
+
+.nom {
+    font-size: 10px;
+    font-weight: 100;
+    color: #555;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+/* Ajouter un conteneur pour gérer la barre de défilement du tableau */
+.table-container {
+    height: 1000px;
+    max-height: 1000px; /* Limite la hauteur du tableau */
+    overflow-y: auto; /* Active la barre de défilement verticale */
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow-x: hidden ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/* Styles pour la barre de défilement uniquement dans le tableau */
+.table-container::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 15px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 15px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 15px;
+    border: 2px solid #f0f0f0;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.tableau {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+.tr th{
+    padding: 15px;
+}
+.tr:hover {
+    background-color: #f9f9f9; /* Couleur de fond au survol */
+}
+.tr td:nth-child(1){
+    color: #1806d5;
+    font-weight: 600;
+}
+.tr td:nth-child(7) a{
+    background-color: rgba(255, 0, 0, 0.225);
+    padding: 8px;
+    padding-top:13px ;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    position: relative;
+    left: -10px;
+} 
+.tr td:nth-child(7) a:hover{
+    background-color: rgb(255, 0, 0);
+}
+.tr td:nth-child(7):hover{transition: transform 0.1s;}
+.tr td:nth-child(7):hover{
+    transform: scale(1.05);
+}
+
+.tr td:nth-child(5){
+display: flex;
+position: relative;
+top: 30px;
+}
+.tr td:nth-child(5) p{
+    position: relative;
+    top: 19px;
+    margin-left: 10px;
+}
+
+.tr td:nth-child(3) p{
+    font-size: 11px;
+    color:#333;
+}
+.tr strong{
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+.public{
+    background-color: rgba(0, 236, 102, 0.281);
+    color: rgb(0, 186, 6);
+    font-weight: 600;
+}
+.privee{
+    background-color: #b4b4b4a0;
+    color: #333333d2;
+    font-weight: 600;
+
+}
+.td {
+    padding: 2px 15px;
+    text-align: left;
+    color: #333;
+}
+
+.td h2 {
+    font-size: 14px; /* Taille du titre */
+    font-weight: 100;
+    margin: 0; /* Pas de marge */
+    color: #1a0dab; /* Couleur du lien */
+    cursor: pointer; /* Curseur en pointeur pour les titres cliquables */
+}
+.td img {
+    border-radius: 4px;
+    width: 160px;
+    height: 110px;
+}
+
+
+.video {
+    max-width: 100%; /* Limiter la largeur de la vidéo */
+    border-radius: 4px; /* Coins arrondis pour la vidéo */
+}
+
+.video-container {
+    display: flex;
+    align-items: center; /* Centrer verticalement */
+}
+
+
+.trash{
+    width: 20px;
+    height: 20px;
+    filter: invert();
+}
+.pdp{
+    max-width: 30px;
+    max-height: 30px;
+    position: relative;top: 10px;
+}

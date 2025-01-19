@@ -1,0 +1,8 @@
+.page{
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    left: 10%;
+    top: 10%;
+    color: black;
+}
