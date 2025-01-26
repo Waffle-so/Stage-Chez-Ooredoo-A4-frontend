@@ -128,12 +128,12 @@ const [currentPage, setCurrentPage] = useState(1);
 
 
 
-const videosPerPage = 15; 
-const DocumetnPerPage = 15; 
-const PlaylistperPage = 15;
+const videosPerPage = 20; 
+const DocumetnPerPage = 20; 
+const PlaylistperPage = 20;
 
 
-const itemsPerPage = 15; 
+const itemsPerPage = 20; 
 const startIndex = (currentPage - 1) * itemsPerPage;
 const endIndex = startIndex + itemsPerPage;
 
@@ -296,7 +296,7 @@ useEffect(() => {
     return video.Catégorie === 'Document' && matchCategory && match_mes_videos && matchesSearch && matchType && matchProject && matchTypeFile;
   });
   setFilteredDocuments(filteredDocuments);
-  console.log(" bnabababa : ",filteredDocuments);
+  //console.log(" bnabababa : ",filteredDocuments);
  
 
    
@@ -331,7 +331,7 @@ const filteredPlaylist = playlist.filter((pl) => {
   set_n_pro_asso(filtered.map(video =>video.Nom_projet));
   set_id_projet_asso(filtered.map(video => video.id_projet));
   set_id_image_asso(filtered.map(video => video.image));
-  console.log(filtered.map(video => video.id_projet))
+ //console.log(filtered.map(video => video.id_projet))
 
   fetch_user_data(filtered.map(video => video.id_User));
 
@@ -614,7 +614,7 @@ const handleFileUpload = async () => {
 
     
 
-    console.log("Fichier téléchargé avec succès:", response.data);
+    //console.log("Fichier téléchargé avec succès:", response.data);
     Router.reload();
   } catch (error) {
     console.error("Erreur lors du téléchargement du fichier:", error);
@@ -639,7 +639,7 @@ const get_video = async () => {
      ? `${process.env.NEXT_PUBLIC_REACT_APP_API_URL_REQUETE_BACKEND}/api/get_all_vid`
      : `${process.env.NEXT_PUBLIC_REACT_APP_API_URL_REQUETE_BACKEND}/api/user_videos`;
 
-     console.log("URL de l'API:", apiUrl);
+     //console.log("URL de l'API:", apiUrl);
     const response = await axios.post(apiUrl,{},
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -653,6 +653,7 @@ const get_video = async () => {
       }));
 
       setVideos(updatedVideos);
+      console.log("updatedVideos : ",updatedVideos);
       setFilteredVideos(updatedVideos);
     } else {
       console.log("Erreur lors de la récupération des vidéos");
@@ -1510,7 +1511,7 @@ const imagePath = imageName
    
 
  
-    const handleVideoClick = (id, userid,fileType,Nom_video) => {
+    const handleVideoClick = (id, userid,fileType,Nom_video,imagePath) => {
     
         setSelectedVideoId(id);
         setSelectedUserId(userid);
@@ -1523,6 +1524,7 @@ const imagePath = imageName
         photoprofil: profileImagePath,
         userIdd: userIdd,
         userId:userid,
+        imagePatth:imagePath,
         type: 'Video',
       }); 
     };
@@ -1591,7 +1593,7 @@ const imagePath = imageName
         )}
   
         <div className={style.a_video_div}>
-          <a onClick={() => handleVideoClick(id, user.id, fileType,Nom_video)} style={{ cursor: 'pointer' }}>
+          <a onClick={() => handleVideoClick(id, user.id, fileType,Nom_video,imagePath)} style={{ cursor: 'pointer' }}>
             {Nom_video[startIndex + index]}
           </a>
         </div>

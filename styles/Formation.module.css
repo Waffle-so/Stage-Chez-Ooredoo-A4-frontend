@@ -805,6 +805,7 @@ left: 8px;}
     justify-content: center;
     text-align: center;
     align-items: center;
+    
 }
 .pagination_div button{
     padding: 10px;
@@ -816,6 +817,8 @@ left: 8px;}
     margin-right: 25px;
     margin-left: 30px; 
     transition: transform 0.1s;
+    position: relative;
+    z-index: 1000;
 }
 .pagination_div button:hover{
     transform: scale(1.05);

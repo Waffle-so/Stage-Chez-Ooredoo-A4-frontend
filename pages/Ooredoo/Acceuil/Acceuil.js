@@ -65,7 +65,14 @@ export default function Acceuil({username,userprenom,usersecteur,userfile_id,not
                     <button> Commencer </button>
                 </div>
 
-
+                <Image
+                className={style.chap}
+                src="/mortarboard.png"
+                width={350}
+                height={350}
+                alt="Picture of the author"
+                priority
+              />
                {/* Section titre et checkbox*/}
 
                 <div className={style.checkbox}>
@@ -221,70 +228,139 @@ Messages </p>
 
                 <div className={`${style.middle_page} ${style.hiddenElement}`} > 
 
-                <Image
-                       className={style.phoo}
-                       src="/phoo.jpg"
-                       width={350}       
-                       height={350}
+
+                    <div className={style.trusted_all_div}> {/*  A ajouter ici */}
+              <p className={style.trusted_by}> Trusted by established companies && technologies used </p>
+               <Image
+                       className={style.trusted}
+                       src="/cesi_logo.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    />  
+               <Image
+                       className={style.trusted2}
+                       src="/ooredoo-removebg-preview.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    />  
+
+
+
+
+
+                    <div className={style.flexing_trusted}>
+                    <Image
+                       className={style.trusted_docker}
+                       src="/docker.png"
+                       width={300}       
+                       height={300}
                        alt="Picture of the author"
                        priority 
                     />  
                     <Image
-                       className={style.pho}
-                       src="/fond_blanc.jpg"
-                       width={150}       
-                       height={150}
+                       className={style.trusted3}
+                       src="/ngi.png"
+                       width={300}       
+                       height={300}
                        alt="Picture of the author"
                        priority 
                     />  
+                    <Image
+                       className={style.trusted3}
+                       src="/nd.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    />  
+                    <Image
+                       className={style.trusted3}
+                       src="/pg.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    />  
+                  
+                    <Image
+                       className={style.trusted4}
+                       src="/postman.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    /> 
+                    <Image
+                       className={style.trusted4}
+                       src="/Socket.io.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    /> 
+                    <Image
+                       className={style.trusted4}
+                       src="/cursor.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    /> 
+                      <Image
+                       className={style.trusted4}
+                       src="/nx.png"
+                       width={300}       
+                       height={300}
+                       alt="Picture of the author"
+                       priority 
+                    />  
+                    </div>
+                        </div>
+
+
+              
+
+
+                </div>
+
+                <div className={style.trusted_by_div}>
+
+                     <div className={style.trusted_by_div_1}>
                      <Image
-                       className={style.shop}
-                       src="/scrool.png"
-                       width={150}       
-                       height={150}
+                       className={style.logo_trusted_by}
+                       src="/ooredoo-removebg-preview.png"
+                       width={300}       
+                       height={300}
                        alt="Picture of the author"
                        priority 
                     />  
-                    <p className={style.about}> A propos du site</p>
-                     <div className={style.Big_Part2_Titre}>
-                    <h1> Quel est le but && résolutions de<br/> cette Application Web ?</h1><br/>
-                    <p>
-                      * L’objectif est de développer une plateforme de formation en ligne innovante, dédiée à l'amélioration des compétences techniques des employés d’Ooredoo. 
-                     Ce projet vise à optimiser la formation interne et l’adoption de nouvelles technologies, tout en garantissant la sécurité des informations sensibles.
-                    </p>
-                    <p>  * L'application optimise la formation continue en facilitant l'accés à des contenus techniques innovants géré par les memebres de l'entreprise eux mêmes.<br/><br/>
-                   *  Cela permet l'adoption des nouvelles technologies ou techniques au sein de l'entreprise. Elle assure aussi la Communication restreinte entre secteurs et protéger les informations sensibles. </p>
-                </div>
-               
-              
-                    
+                    <p>  * L’objectif est de développer une plateforme de formation en ligne innovante, dédiée à l'amélioration des compétences techniques des employés d’Ooredoo. 
+                    Ce projet vise à optimiser la formation interne et l’adoption de nouvelles technologies, tout en garantissant la sécurité des informations sensibles. </p>
 
-                    <Image
-                       className={style.middle_page_bush}
-                       src="/bush.png"
-                       width={200}       
-                       height={200}
+                        <button> En savoir plus → </button>
+                     </div>
+
+                     <div className={style.trusted_by_div_2}>
+                     <Image
+                       className={style.logo_trusted_by}
+                       src="/ooredoo-removebg-preview.png"
+                       width={300}       
+                       height={300}
                        alt="Picture of the author"
                        priority 
                     />  
-
-                    <Image
-                       className={style.middle_page_bush2}
-                       src="/bush2.png"
-                       width={200}       
-                       height={200}
-                       alt="Picture of the author"
-                       priority 
-                    />  
-              
-              <br/>
-              
-              
-
-               
-
+                    <p> * L'application facilite l'accès à des contenus techniques innovants pour la formation continue, favorisant l'adoption de nouvelles technologies et assurant une communication sécurisée entre les secteurs de l'entreprise. </p>
+                        <button>  Services → </button>
+                     </div>
 
                 </div>
+
+
+
             </div>
 
 

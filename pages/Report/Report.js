@@ -710,7 +710,22 @@ const handlePageChange_proj_all = (page) => {
     setCurrentPage_proj_all(page);
 };
 
+// Fonction pour calculer le nombre de jours depuis la dernière connexion
+const calculateDaysSinceLastLogin = (lastLoginDate) => {
+    if (!lastLoginDate) return 'jamais connecté';
+    
 
+    const lastLogin = new Date(lastLoginDate);
+  if (isNaN(lastLogin)) return 'jamais connecté'; // Vérifie si la date est invalide
+    const today = new Date();
+    const timeDifference = today - lastLogin;
+    const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  
+    return daysDifference === 0
+      ? "connecté aujourd'hui"
+      : `pas connecté depuis ${daysDifference} jour${daysDifference > 1 ? 's' : ''}`;
+  };
+  
   
 
     return (
@@ -803,6 +818,7 @@ const handlePageChange_proj_all = (page) => {
                                 {selectedRole === "Chef de projet" &&(
                                  <th> Publications </th>
                                   )}
+                                  <th> Dernière connexion </th>
                                 <th> </th>
                                 <th> </th>
                                 <th> </th>
@@ -817,7 +833,8 @@ const handlePageChange_proj_all = (page) => {
                                 const userPrenom = user.prenom || (utilisateur ? utilisateur.prenom : 'prenom non disponible'); // Nom de l'utilisateur
                                 const userrole = user.role || (utilisateur ? utilisateur.role : 'role non disponible'); // Nom de l'utilisateur
                                 const userdate = user.date || (utilisateur ? utilisateur.date : 'date non disponible'); // Nom de l'utilisateur
-                                const userConnexion = user.Nbr_Connexion || (utilisateur ? utilisateur.Nbr_Connexion: 'Nombre non disponible');
+                                const userConnexion = user.Nbr_Connexion || (utilisateur ? utilisateur.Nbr_Connexion: '0');
+                                const userlastLogin = user.lastLogin || (utilisateur ? utilisateur.lastLogin: 'lastLogin non disponible');
                                 const isInProject =  buttonOK && user.isInProject ? "✔️" : ""; // Indicateur
                                 return (
                                     <tr key={index} className={style.tr_table}>
@@ -851,6 +868,7 @@ const handlePageChange_proj_all = (page) => {
            {selectedRole === "Chef de projet" && (
   <td className={style.nbr_de}>{user.Nbr_add_video || 0}</td>
 )}
+                                        <td>{calculateDaysSinceLastLogin(userlastLogin)}</td>
                                         <td>
                 <div
                     className={style.roleContainer}
@@ -1094,9 +1112,9 @@ const handlePageChange_proj_all = (page) => {
                         onChange={handleSearch2}
                         className={style.searchInput}
                     />
-                    <button className={style.but_actualiser} onClick={()=>handle_Actualiser()}> Actualiser </button>
+                    <button className={style.but_actualiser2} onClick={()=>handle_Actualiser()}> Actualiser </button>
                      <select
-                    className={style.roleFilter}
+                    className={style.roleFilter2}
                     value={selectedRole}
                     onChange={handleRoleChange2}
                 >
@@ -1126,6 +1144,7 @@ const handlePageChange_proj_all = (page) => {
                                 {selectedRole === "Chef de projet" &&(
                                  <th> Publications </th>
                                   )}
+                                  <th> Dernier Connexion</th>
                              
                             </tr>
                         </thead>
@@ -1138,7 +1157,8 @@ const handlePageChange_proj_all = (page) => {
                                 const userPrenom = user.prenom || (utilisateur ? utilisateur.prenom : 'prenom non disponible'); // Nom de l'utilisateur
                                 const userrole = user.role || (utilisateur ? utilisateur.role : 'role non disponible'); // Nom de l'utilisateur
                                 const userdate = user.date || (utilisateur ? utilisateur.date : 'date non disponible'); // Nom de l'utilisateur
-                                const userConnexion = user.Nbr_Connexion || (utilisateur ? utilisateur.Nbr_Connexion: 'Nombre non disponible');
+                                const userConnexion = user.Nbr_Connexion || (utilisateur ? utilisateur.Nbr_Connexion: '0');
+                                const userlastLogin = user.lastLogin || (utilisateur ? utilisateur.lastLogin: 'last_login non disponible');
                                 return (
                                     <tr key={index} className={style.tr_table2}>
                                          <td>#{userId}</td>
@@ -1171,6 +1191,7 @@ const handlePageChange_proj_all = (page) => {
            {selectedRole === "Chef de projet" && (
             <td className={style.nbr_de}>{user.Nbr_add_video || 0}</td>
           )}
+          <td>{calculateDaysSinceLastLogin(userlastLogin)}</td>
 
                                     </tr>
                                 );
@@ -1315,9 +1336,9 @@ const handlePageChange_proj_all = (page) => {
                         onChange={handleSearch2}
                         className={style.searchInput}
                     />
-                    <button className={style.but_actualiser} onClick={()=>handle_Actualiser()}> Actualiser </button>
+                    <button className={style.but_actualiser2} onClick={()=>handle_Actualiser()}> Actualiser </button>
                      <select
-                    className={style.roleFilter}
+                    className={style.roleFilter2}
                     value={selectedRole}
                     onChange={handleRoleChange2}
                 >

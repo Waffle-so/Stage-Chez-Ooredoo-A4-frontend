@@ -55,6 +55,25 @@ top: -30px;
     
 }
 
+.roleFilter2{
+    background-color: rgb(45, 56, 255);
+    color: white;
+    font-size: 13px;
+    width: max-content;
+    padding: 8px;
+    border:none;
+    border-radius: 5px;
+    position: relative;
+    left: 26%;
+    top: -30px;
+    }
+    
+    .roleFilter2 option{
+        background-color: white;
+        color:black;
+        
+    }
+
 .btn_ajt_obj{
     margin-left: 235px;
     padding: 7px;
@@ -129,6 +148,19 @@ top: -20px;
     transition: background-color 0.3s ease;
 }
 
+.but_actualiser2{
+    position: relative;
+    left: 25% ;
+    top: -30px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    background-color: #0070f3;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
 
 
 
@@ -331,11 +363,14 @@ top: -20px;
     border-radius: 10px;
     transform: translateY(-50%);
     z-index: 10;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.414);
   }
-  
+  .deleteButtonContainer:hover{
+    background-color: rgba(255, 0, 0, 0.856);
+  }
   .projectNameContainer:hover .deleteButtonContainer {
     display: block; /* Afficher au survol */
+    
   }
   
   .deleteButtonContainer button {
@@ -734,23 +769,53 @@ left: 1115px;
 
 
 /*-------------*/
-
-@media (min-width: 1800px) and (max-width: 7000px) {  
+@media (min-width: 1700px) and (max-width: 1800px) {
     .Report_div_all{
-        margin-left: -140px;
+        margin-left: -40px;
     }
     .div_all_tableau{
         width: 130%;  
     }
-    .searchInput{
-    }
-    .roleFilter{
 
+    .but_actualiser2{
+        margin-left: 130px;
     }
     
-    .btn_ajt_obj{
+    
+    .table {
+        width: 1250px;
     }
     
+    .table_error{
+        width: 1245px;
+    }
+    
+    
+    .table_projet{
+        width: 100%;
+    }
+    
+    .table_container2{
+        overflow-y: auto;
+        height: 340px;
+        
+    }  .ajou_Button{
+        left: 89%;
+       }
+}
+
+
+@media (min-width: 1800px) and (max-width: 7000px) {  
+    .Report_div_all{
+        margin-left: -180px;
+    }
+    .div_all_tableau{
+        width: 130%;  
+    }
+
+    .but_actualiser2{
+        margin-left: 230px;
+    }
     
     
     .flexing{
@@ -775,7 +840,7 @@ left: 1115px;
     }
     
     .ajou_Button{
-     left: 92%;
+     left: 98%;
     }
     .info{
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -786,15 +851,11 @@ left: 1115px;
         left: -260px;
     
     }
-    .but_actualiser{
-    }
+  
     
-    .table_container {
-    
-    }
     
     .table {
-        width: 1250px;
+        width: 1350px;
     }
     
     .table_error{

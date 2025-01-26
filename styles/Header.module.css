@@ -8,11 +8,11 @@ padding: 0;
   .background_fixed{
     position: fixed;
     width: 100%;
-    height: 80px;
+    height: 85px;
     left: 0px;
     top: -20px;
-    background-color: rgba(255, 255, 255, 0.948);
-    filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.874);
+    filter: blur(0.2px);
     z-index: 10;
   }
 
@@ -25,9 +25,44 @@ padding: 0;
     overflow-x: hidden;
     justify-content: center;
     text-align: center;
-z-index: 100;
+z-index: 800;
+
   
   }
+
+  .background_fixed.light {
+    background-color: white;
+  }
+  
+  .background_fixed.dark {
+    background-color: #090909ea;
+    color: white;
+  }
+  
+  .background_fixed.orange {
+    background-color: rgba(0, 30, 197, 0.8);
+    color: black;
+  }
+
+
+  
+  .themeIcons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: -538px;
+    top: 18px;
+    z-index: 500;
+  }
+ 
+  .themeIcons:hover{
+    transform: scale(1.1);
+  }
+
+
+
+
+  
   .div_in_header{
     display: flex;
     position: fixed;
@@ -39,8 +74,14 @@ z-index: 100;
     position: relative;
     left: -240px;
     display: flex;
+    filter: invert();
     
   }
+  .div_logo.light{
+    filter: none;
+  }
+
+
   .logo{
     width: 42px;
     height: 42px;
@@ -50,12 +91,11 @@ z-index: 100;
     font-weight: 600;
     color: black;
     display: flex;
+    
   }
 
   .div_logo h1 p{
-    font-weight: 600;
-    color: rgb(213, 0, 0);
-    
+    font-weight: 500;
   }
 
   .ul {
@@ -65,16 +105,23 @@ z-index: 100;
     text-align: center;
     display: flex;
     justify-content: center;
-    color: black;
     font-family: "Inter", sans-serif;
     top: 25px;
-   left: -190px;
+   left: -230px;
+   color: white;
     
   }
+.ul.light{
+  color: black;
+}
+
   .active {
     font-weight: bold;
     color: #0070f3; /* Par exemple, une couleur distinctive */
     border-bottom: 1px solid ;
+  }
+  .active.orange{
+    color: #000000;
   }
   
   .ooreedoo{
@@ -91,10 +138,15 @@ z-index: 100;
  font-weight: 100;
  font-size:12px;
  transition: transform 0.2s; /* Animation sur le width et height */
+
   }
   .li:hover{
    transform: scale(1.1);
     color:#0070f3;
+  }
+
+  .li:hover.orange{
+    color: #000000;
   }
 
   .profile{
@@ -108,6 +160,10 @@ z-index: 100;
     top: 18px;
     left: 740px;
     transition: width 0.1s, height 0.1s; /* Animation sur le width et height */
+    filter: invert();
+  }
+  .profile.light{
+    filter: none;
   }
 .profile:hover{
 width: 27px;
@@ -122,8 +178,13 @@ height: 27px;
     top: 18px;
     left: 700px;
     transition: width 0.2s, height 0.2s; /* Animation sur le width et height */
+    filter: invert();
+  }
+  .notif.light{
+    filter: none;
   }
   
+
  /* .notif:hover {
     width: 28px;
     height: 28px;
@@ -131,9 +192,9 @@ height: 27px;
   
 .input_search{
   position: absolute;
-  left: 300px;
+  left: 280px;
   top: 17px;
-  width: 300px;
+  width: 350px;
   background-color: rgb(205, 205, 205);
   border: none;
   padding: 9px;
@@ -278,4 +339,37 @@ margin-bottom: 10px;
   }
     .input_search{ display:none;}
     .div_logo{display: none;}
+      }
+
+      @media (min-width: 1700px) and (max-width: 1800px) {
+        .themeIcons{
+          left: 985px;
+        }
+      }
+      @media (min-width: 1800px) and (max-width: 7000px) {
+        .div_logo{
+          left: -300PX;
+        }
+        .ul{
+          left: -320px;
+        }
+        .input_search {
+          left: 200px;
+          width: 430px;
+        }
+        .profile{
+          left: 800px;
+        }
+        .notif{
+          left: 760px;
+        }
+        .themeIcons{
+          left: 1095px;
+        }
+        .notif_count {
+          left: 770px;
+        }
+        .p_page_name{
+          left: -400px;
+        }
       }

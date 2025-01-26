@@ -210,3 +210,45 @@ top: 30px;
     max-height: 30px;
     position: relative;top: 10px;
 }
+
+
+
+@media (min-width: 1700px) and (max-width: 1800px) {
+    .div_playlist_all{
+        width: 130%;
+    }
+    .playlist {
+        width: 110%;
+        left: -100px;
+    }
+    
+    .playlist h1{
+        font-size: 40px;
+    }
+
+.tableau {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+}
+@media (min-width: 1800px) and (max-width: 7000px) {
+    .div_playlist_all{
+        width: 150%;
+    }
+    .playlist {
+        width: 110%;
+        left: -200px;
+    }
+    
+    .playlist h1{
+        font-size: 40px;
+    }
+
+.tableau {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+}

@@ -9,7 +9,7 @@ import Playlist from '../Playlist/Playlist';
 
 export default function Video({setpage,username,userprenom}) {
     const router = useRouter();
-    const { id , nom, prenom, photoprofil, userId ,userIdd,type ,id_Playlist}  = router.query;
+    const { id , nom, prenom, photoprofil, userId ,userIdd,type ,id_Playlist,imagePatth}  = router.query;
     const [videoDetails, setVideoDetails] = useState(null);
     const [userDetails, setUserDetails] = useState({ nom, prenom, photoprofil ,userIdd}); // Initialize with query values
     const [videos, setVideos] = useState([]);
@@ -21,6 +21,55 @@ export default function Video({setpage,username,userprenom}) {
     const [err_comment,set_err_comment]=useState('');
     const [replyCommentId, setReplyCommentId] = useState(null);
 
+
+    const [newNomVideo,setNewNomVideo]=useState('');
+    const [newDescription,setNewDescription]=useState('');
+    const [modal_modifier_video,set_modal_modifier_video]=useState(false);
+    const [newImagePath, setNewImagePath] = useState(null);
+    const [newFile, setNewFile] = useState(null);
+
+
+
+    const allowedTypes2 = [
+        'image/png',
+        'image/jpeg',
+        'image/jpg',
+        'image/jfif',
+        'image/webp',
+    ];
+    
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            if (allowedTypes2.includes(file.type)) {
+                setNewImagePath(file.name);
+                setNewFile(file);
+            } else {
+                alert('Type de fichier non autorisé.');
+                setNewImagePath(null);
+                setNewFile(null);
+            }
+          if (file.size > 50 * 1024 * 1024) { // 50 Mo
+            alert('Le fichier dépasse la taille maximale de 50 Mo.');
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            setNewImagePath(e.target.result); // Met à jour l'état avec l'URL de l'image
+          };
+          reader.readAsDataURL(file);
+          setNewFile(file);
+        }
+      };
+
+    const handle_modal_modifier_video=()=>{
+        set_modal_modifier_video(true);
+        setNewNomVideo(NomVideo);
+        setNewDescription(Description);
+    }
+    const handle_close_modal_modifier_video=()=>{
+        set_modal_modifier_video(false);
+    }
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -294,6 +343,58 @@ const toggleSidebar = () => {
             console.error('Erreur lors de l envoie du commentaire : ', err);
         }
       }
+
+
+
+      const handleSubmit_modifier_video = async (id,userId,nomVideo,description,file) => {
+
+        
+        const token = localStorage.getItem('token');
+        if (!token) {
+            console.error("Token non trouvé");
+            router.push('../Login2/Login2');
+            return;
+        }
+       
+
+        if (!newNomVideo || !newDescription || !newFile) {
+          alert('Veuillez remplir tous les champs et sélectionner une image.');
+          return;
+        }
+
+        if (newFile.size > 50 * 1024 * 1024) { // 50 Mo
+            alert('Le fichier dépasse la taille maximale de 50 Mo.');
+            return;
+          }
+    
+        const formData = new FormData();
+        formData.append('id', id);
+        formData.append('nomVideo', newNomVideo);
+        formData.append('description', newDescription);
+        formData.append('file', newFile);
+    
+        try {
+          const response = await axios.post(`${process.env.NEXT_PUBLIC_REACT_APP_API_URL_REQUETE_BACKEND}/api/update_video`, formData, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "multipart/form-data",
+            },
+
+          });
+          if (response.data.success) {
+            alert('Vidéo mise à jour avec succès.');
+            handle_close_modal_modifier_video();
+            Router.push('/Page_One_For_All?page=Formation');
+          } else {
+            alert('Erreur lors de la mise à jour de la vidéo.');
+          }
+        } catch (error) {
+          console.error('Erreur lors de la requête :', error);
+          alert('Erreur lors de la mise à jour de la vidéo.');
+        }
+      };
+
+
     
 
     const get_video = async () => {
@@ -436,7 +537,103 @@ const toggleSidebar = () => {
                         <img src={imagePath || '/default-profile.jpg'} alt="Photo de profil" className={style.pdp} />
                         <p>{userDetails.nom} {userDetails.prenom}</p>
 
-                        <a href={VIDEOpATH} download className={`${style.downloadButton} ${isOpen ? style.downloadButton_after : ''}`}>
+
+{userIdd == userDetails.id && type !=='playlist' && (
+<button className={`${style.button_modifier_video} ${isOpen ? style.button_modifier_video_after : ''}`} style={{cursor: 'pointer'}} onClick={handle_modal_modifier_video}> Modifier la vidéo </button>
+)}
+
+{modal_modifier_video && (
+    <div className={style.modal_container_modifier_video}>
+        <div className={style.modal_modifier_video}>
+            
+            {/* Partie droite du modal */}
+            <div className={style.modal_modifier_video_left}>
+                <div className={style.modal_modifier_video_header}>
+                    <h2>Modifier la vidéo</h2>
+                </div>
+
+                <div className={style.modal_modifier_video_body}>
+                    {/* Champs de saisie */}
+                    <label>Nouveau nom pour la vidéo <span style={{color: 'red'}}> (max 70 caractères)</span></label>
+                    <input 
+                        type="text"
+                        placeholder="Nom de la vidéo"
+                        value={newNomVideo}
+                        onChange={(e) => setNewNomVideo(e.target.value)}
+                        maxLength={70}
+                    />
+                    <br/>
+
+                    <label>Nouvelle description pour la vidéo <span style={{color: 'red'}}> (max 700 caractères)</span></label>
+                    <textarea
+                        placeholder="Description de la vidéo"
+                        value={newDescription}
+                        onChange={(e) => setNewDescription(e.target.value)}
+                        maxLength={700}
+                    />
+                    <br/>
+
+                    {/* Section miniatures */}
+                    <div className={style.flexing_miniature}>
+                        
+                       
+                    
+                        <div className={style.fileUpload}>
+                        <label>Miniature de la vidéo</label><br/>
+                        <p>La taille de la miniature ne doit pas dépasser 1000x1000 pixels (png ,jpg, jpeg, webp, jfif) </p>
+
+                            <input
+                                type="file"
+                                id="newFileInput"
+                                name="file"
+                                className={style.hiddenFileInput}
+                                onChange={handleFileChange}
+                            />
+                            <label
+                                htmlFor="newFileInput"
+                                className={style.newFileLabel}
+                                style={{ backgroundImage: `url(${newImagePath || '/default-image.jpg'})` }}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Partie gauche du modal */}
+            <div className={style.modal_modifier_video_right}>
+                <div 
+                    className={style.customFileLabel}
+                    style={{ backgroundImage: `url(${imagePatth})` }}
+                />
+                <h2>Informations</h2>
+                <div className={style.modal_modifier_video_right_label}> 
+                    <label> Nom de la vidéo </label>
+                <p> {NomVideo}</p>
+                <label> Description de la vidéo </label>
+                <p> {Description}</p>
+                    </div>
+               
+
+                <div className={style.modal_modifier_video_footer}>
+                    <button 
+                        onClick={handle_close_modal_modifier_video}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        Fermer
+                    </button>
+                    <button onClick={() => handleSubmit_modifier_video(videoDetails.id,userIdd,newNomVideo,newDescription,newFile)} style={{ cursor: 'pointer' }}>
+                        Modifier
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+)}
+
+
+
+    <a href={VIDEOpATH} download className={`${style.downloadButton} ${isOpen ? style.downloadButton_after : ''}`}>
         Télécharger <Image 
                 className={style.logo_download}
                 src='/vers-le-bas.png'
@@ -481,9 +678,23 @@ const toggleSidebar = () => {
                             <p> {getTimeAgo(comment.Date_poste)}</p>
                             
                             {userIdd == comment.id_User && (
-                        <button onClick={(() => handledeletecomment(comment.id))} style={{ cursor: 'pointer' }} >Supprimer</button>
+                        <button onClick={(() => handledeletecomment(comment.id))} style={{ cursor: 'pointer' }} > <Image
+                        className={style.reply_pic}
+                        src="/trash.png"
+                        width={100}
+                        height={100}
+                        alt="Picture of the author"
+                        priority
+                      /> <p>Supprimer</p></button>
                         )}
-                         <button onClick={() => setReplyCommentId(comment.id)} style={{ cursor: 'pointer' }} >  Répondre </button>
+                         <button onClick={() => setReplyCommentId(comment.id)} style={{ cursor: 'pointer' }} > <Image
+                className={style.reply_pic}
+                src="/reply.png"
+                width={100}
+                height={100}
+                alt="Picture of the author"
+                priority
+              /> <p> Répondre </p> </button>
                          
                             </div>
                            
@@ -492,7 +703,8 @@ const toggleSidebar = () => {
                         <p className={`${style.text_comment} ${isOpen ? style.videoWithSidebarOpen : ''} ${isOpen ? style.text_comment_after : ''}`}> <label>{comment.Type_com}</label>  {comment.Commentaire}</p>
 
 
-                        <div className={style.but_show_replies}><button  onClick={() => setShowReplies(prev => ({ ...prev, [comment.id]: !prev[comment.id] }))}>
+                        <div 
+                        className={`${style.but_show_replies} ${isOpen ? style.videoWithSidebarOpen : ''} ${isOpen ? style.but_show_replies_after : ''}`}><button  onClick={() => setShowReplies(prev => ({ ...prev, [comment.id]: !prev[comment.id] }))}>
                 {showReplies[comment.id] ? 'Masquer la réponse' : 'Afficher la réponse'}
               </button>
                             </div>
@@ -500,7 +712,7 @@ const toggleSidebar = () => {
 
                         {/* Boîte de réponse */}
           {replyCommentId === comment.id && (
-            <div className={style.replyBox}>
+            <div className={`${style.replyBox} ${isOpen ? style.videoWithSidebarOpen : ''} ${isOpen ? style.replyBox_after : ''}`} >
             <div >
               <textarea
                 type="text"
@@ -533,8 +745,16 @@ const toggleSidebar = () => {
                         <p>{replyUser ? `${replyUser.nom} ${replyUser.prenom}` : 'Utilisateur inconnu:'}</p>
                         <p>{getTimeAgo(reply.Date_poste)}</p>
                         
-                        {userIdd == comment.id_User && (
-                        <button onClick={(() => handledeletecomment(reply.id))} style={{ cursor: 'pointer' }} >Supprimer</button>
+                        
+                        {userIdd == reply.id_User && (
+                        <button onClick={(() => handledeletecomment(reply.id))} style={{ cursor: 'pointer' }} > <Image
+                        className={style.reply_pic}
+                        src="/trash.png"
+                        width={100}
+                        height={100}
+                        alt="Picture of the author"
+                        priority
+                      /> <p>Supprimer</p></button>
                         )}
                          
                       </div>
@@ -569,8 +789,7 @@ const toggleSidebar = () => {
         <>
        <div className={style.but_sidebar}>
        <button
-            className={style.toggleButton}
-          
+            className={`${style.toggleButton} ${isOpen ? style.videoWithSidebarOpen : ''} ${isOpen ? style.toggleButton_after : ''}`}
             onClick={toggleSidebar}
         >
             <p className={style.toggleButton_p}>{isOpen ? '←' : '→'} Playlist  </p>

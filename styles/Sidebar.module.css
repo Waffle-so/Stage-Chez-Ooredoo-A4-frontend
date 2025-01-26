@@ -8,7 +8,7 @@
   top: 0; /* Positionnez en haut de la page */
   right: 0; /* Alignez à droite */
   transition: transform 0.4s ease; /* Ajoute une transition */
-  z-index: 100;
+  z-index: 2000;
   border: 1px solid rgb(50, 50, 50);
 }
 
@@ -731,3 +731,16 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
 
+
+
+@media (min-width: 1700px) and (max-width: 1800px) {
+  .sidebar{
+    width: 255px;
+  }
+}
+
+@media (min-width: 1800px) and (max-width: 7000px) {
+  .sidebar{
+    width: 260px;
+  }
+}

@@ -160,3 +160,39 @@
     outline: none;
     border-color: #007bff;
   }
+
+  @media (min-width: 1700px) and (max-width: 1800px) {
+    .div_all_log{
+      width: 1600px;
+      margin-left:-100px;
+
+  }
+  
+  
+  .table_container_logs{
+      width: 1550px;
+    }
+
+    
+    .div_dateInput_log{
+        margin-left: 1120px;
+      }
+      
+      
+  }
+
+  @media (min-width: 1800px) and (max-width: 7000px) {
+    .div_all_log{
+      width: 1700px;
+      margin-left:-200px;
+
+  }
+  .div_dateInput_log{
+    margin-left: 1320px;
+  }
+  
+  
+  .table_container_logs{
+      width: 1750px;
+    }
+  }

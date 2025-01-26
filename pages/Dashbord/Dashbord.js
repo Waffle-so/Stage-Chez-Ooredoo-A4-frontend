@@ -298,7 +298,19 @@ try{
 
     
   };
+// Fonction pour calculer le nombre de jours depuis la dernière connexion
+const calculateDaysSinceLastLogin = (lastLoginDate) => {
+  if (!lastLoginDate) return 'jamais connecté';
 
+  const lastLogin = new Date(lastLoginDate);
+  const today = new Date();
+  const timeDifference = today - lastLogin;
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+  return daysDifference === 0
+    ? "connecté aujourd'hui"
+    : `pas connecté depuis ${daysDifference} jour${daysDifference > 1 ? 's' : ''}`;
+};
 
   return (
     <div className={style.Dashbord_all_div}>
@@ -486,6 +498,7 @@ try{
     <th> Publications</th>
    )}
    <th>Date de naissance</th>
+   <th>Dernière connexion</th>
  </tr>
 </thead>
 <tbody>
@@ -506,7 +519,11 @@ try{
              height={40}
              style={{ borderRadius: '50%' }}
            />
-           <p onClick={() => handleNavigateToProfile('Profile_visit', user)} style={{ cursor: 'pointer' }}>{userName}</p>
+           <div>
+            <p onClick={() => handleNavigateToProfile('Profile_visit', user)} style={{ cursor: 'pointer' }}>{userName}</p>
+           <p className={style.gmail}> {user.Gmail}</p> 
+           </div>
+          
          </div>
        </td>
        <td>
@@ -550,6 +567,7 @@ try{
   <td className={style.nbr_de}>{user.Nbr_add_video || 0}</td>
 )}
        <td>{user.date ? user.date.slice(0, 10) : ''}</td>
+       <td>{calculateDaysSinceLastLogin(user.lastLogin)}</td>
      </tr>
    );
  })}

@@ -53,10 +53,12 @@ export default function Page_One_For_All({}){
 
   const [newpass,setnewpass]=useState('');
   const [confirmnewpass,setconfirmnewpass]=useState('');
-  const [message,setMessage]=useState('');
-  
+  const [message,setMessage]=useState([]);
+  const [hoveredMessage, setHoveredMessage] = useState(null);
   
   const [notificationCount, setNotificationCount] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const [senders, setSenders] = useState(new Set());
 
   const handleNotificationCountChange = (count) => {
     setNotificationCount(count);
@@ -107,28 +109,64 @@ export default function Page_One_For_All({}){
   }, [Router]);
 
 
-  // Écouter les notifications
+
+  const getImagePath = (photoprofil) => {
+    const imageName = photoprofil ? photoprofil.split(/[/\\]/).pop() : 'default-profile.jpg'; 
+    return `${process.env.NEXT_PUBLIC_REACT_APP_API_URL_REQUETE_BACKEND}/files/${imageName}`;
+  };
   useEffect(() => {
-    if (socket) {
-      const handleReceiveNotification = (data) => {
-        const {message} = data;
+    if(!socket) return;
 
-        if (message){
-          console.log("message :",message);
-          setVisibleNotifications(data); 
-        }
-        console.log('Notification reçue :', data);
-       
-      };
+    const handleReceiveMessage = (data) => {
+      const { nom, prenom , content,photoprofil,timestamp} = data;
+      const senderName = (
+        <div className={style.sender_name_container}  onMouseEnter={() => setHoveredMessage(message.content)}
+        onMouseLeave={() => setHoveredMessage(null)}>
+          <div className={style.blue}></div>
+          <div className={style.senders}>
+            <Image
+            className={style.Image}  alt={content}
+            src={getImagePath(photoprofil)} 
+            width={100}
+            height={100}
+            priority
+          />
+          <span className={style.sender_name}>
+            Message de : {nom} {prenom} : {content.slice(0, 10)}...
+          </span>
+          <p className={style.timestamp}> {timestamp.slice(0,10)}</p>
+          </div>
+          
+        </div>
+      );
 
-      socket.on('/api/receive_notif', handleReceiveNotification);
+      setMessage((prevMessages) => [...prevMessages, senderName]);
+    };
 
-      // Nettoyer l'écouteur à la déconnexion
-      return () => {
-        socket.off('/api/receive_notif', handleReceiveNotification);
-      };
-    }
+    socket.on('/api/receive_message', handleReceiveMessage);
+
+    // Nettoyer l'écouteur à la déconnexion
+    return () => {
+      socket.off('/api/receive_message', handleReceiveMessage);
+    };
   }, [socket]);
+
+
+  
+ /* useEffect(() => {
+    if(message.length > 0 ){
+      setIsHovering(Array.from(senders).join(', '));
+    }
+  }, [senders]);*/
+
+
+  const handleClick = () => {
+    setIsHovering(!isHovering);
+  };
+
+
+
+
   
   useEffect(() => {
     if (notifications.length > 0) {
@@ -380,7 +418,7 @@ if (!loggedIn) {
 
     return(
         <>
-         <Header user_Gmail={user_Gmail} username={username} userprenom={userprenom} user_image={user_image} userIdd={userId} setpage={setpage} notificationCount={notificationCount} user_role={user_role}/>
+         <Header user_Gmail={user_Gmail} username={username} userprenom={userprenom} user_image={user_image} userIdd={userId} setpage={setpage} notificationCount={notificationCount} user_role={user_role} onClick={handleClick} />
          <Sidebar userId={userId} currentPage={currentPage} setPage={setCurrentPage} user_image={user_image} usersecteur={usersecteur} onNotificationCountChange={handleNotificationCountChange} username={username} userprenom={userprenom} user_Gmail={user_Gmail}/>
 
         <div className={darkMode ? `${style.all_div_here} ${style.darkModeClass}` : `${style.all_div_here} ${style.lightModeClass}`}>
@@ -444,6 +482,22 @@ if (!loggedIn) {
             </div>
         
       ):(<p></p>)}
+
+
+   {isHovering && message.length > 0 && (
+        <div className={style.hoverMessage}>
+                    <div className={style.titre}> 
+            <h1> Notifications </h1>
+          </div>
+
+          {message.map((message, index) => (
+            <div key={index}>
+              
+              {message}
+            </div>
+          ))}
+        </div>
+      )}
  
         <div className={style.middle}> {renderPageContent()}</div>
         <div className={style.right_page}></div>

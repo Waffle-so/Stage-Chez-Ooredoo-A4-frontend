@@ -146,7 +146,9 @@ const Sidebar = ({ userId, currentPage, setPage ,user_image,usersecteur,onNotifi
           withCredentials: true,
         });
         
-        setMessages(response.data.messages);
+        if(Array.isArray(response.data.messages)){
+          setMessages(response.data.messages);
+        }
         console.log('voici messages ici : ',response.data.messages);
       } catch (error) {
         console.error('Erreur lors de la récupération des messages:', error);
@@ -180,12 +182,17 @@ const Sidebar = ({ userId, currentPage, setPage ,user_image,usersecteur,onNotifi
 
     // Notification pour un message entrant
     if (recipientId === userId) {
+      const sender = allusers.find(user => user.userId === senderId);
+      const senderName = sender ? sender.userName : "Utilisateur inconnu";
+
       setallusers((prevUsers) =>
         prevUsers.map((user) =>
           user.userId === senderId ? { ...user, hasNewMessage: true } : user
         )
       );
       setNotificationCount((prevCount) => prevCount + 1);
+       // Envoyer le nom de l'expéditeur avec la notification
+       socket.emit('/api/send_message', { message: `Vous avez reçu un message de ${senderName}` });
     }
 
     // Mise à jour des messages
@@ -228,7 +235,7 @@ const Sidebar = ({ userId, currentPage, setPage ,user_image,usersecteur,onNotifi
     socket.off('/api/connected_users', updateConnectedUsers);
     
   };
-}, [socket, usersecteur]);
+}, [socket, usersecteur,allusers]);
 
 
 const handleUserDisconnect = (userId) => {

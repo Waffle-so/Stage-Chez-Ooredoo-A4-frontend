@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Router from 'next/router';
 import axios from 'axios';
 
-export default function Header({ user_Gmail,username, userprenom,user_image, userIdd,setpage, notificationCount, user_role }) {
+export default function Header({ user_Gmail,username, userprenom,user_image, userIdd,setpage, notificationCount, user_role,onClick }) {
   const router = useRouter();
   const [pagee, setpagee] = useState('');
   const [filteredVideos, setFilteredVideos]=useState([]);
@@ -13,8 +13,14 @@ export default function Header({ user_Gmail,username, userprenom,user_image, use
   const [searchTerm, setSearchTerm] = useState(''); // État pour la recherche
   const [selectedVideoId, setSelectedVideoId] = useState(null);
   const [selectedUserId, setSelectedUserId] = useState(null);
+  const [theme, setTheme] = useState('dark');
+  const currentPage = router.query.page;
 
-
+  const handleThemeChange = () => {
+    // Change le thème cycliquement
+    const nextTheme = theme === 'light' ? 'dark' : theme === 'dark' ? 'orange' : 'light';
+    setTheme(nextTheme);
+  };
 
   const navigate = (pageName) => {
     setpage(pageName);
@@ -159,10 +165,10 @@ export default function Header({ user_Gmail,username, userprenom,user_image, use
   return (
     <>
       <div className={style.body}>
-        <div className={style.background_fixed}></div>
+        <div className={`${style.background_fixed} ${style[theme]}`} ></div>
         <header className={style.header}>
           <div className={style.div_in_header}>
-            <div className={style.div_logo}>
+            <div className={`${style.div_logo} ${style[theme]}`}>
               <Image
                 className={style.ooreedoo}
                 src="/ooredoo-removebg-preview.png"
@@ -172,14 +178,17 @@ export default function Header({ user_Gmail,username, userprenom,user_image, use
                 onClick={() => navigate('Profile')}
                 priority
               />
+              {currentPage !== 'Video' && currentPage !== 'Playlist' && (
               <p className={style.p_page_name}>{pagee} </p>
+              )}
             </div>
 
-            <ul className={style.ul}>
+
+            <ul className={`${style.ul} ${style[theme]}`}>
               {menuItems.map((item) => (
                 <li
                   key={item.pageName}
-                  className={`${style.li} ${router.query.page === item.pageName ? style.active : ''}`}
+                  className={`${style.li} ${router.query.page === item.pageName ? style.active : ''} ${style[theme]}`}
                   onClick={() => navigate(item.pageName)}
                 >
                   {item.name}
@@ -245,7 +254,7 @@ export default function Header({ user_Gmail,username, userprenom,user_image, use
 
 
 <Image
-              className={style.profile}
+              className={`${style.profile} ${style[theme]}`}
               src="/profile.png"
               width={80}
               height={80}
@@ -255,19 +264,53 @@ export default function Header({ user_Gmail,username, userprenom,user_image, use
             /> 
             
 
-            <div className={style.flex_notif}>
+            <div className={style.flex_notif}  
+                onClick={onClick} >
               <Image
-                className={style.notif}
+                className={`${style.notif} ${style[theme]}`}
                 src="/notif.png"
                 width={50}
                 height={50}
                 alt="Picture of the author"
                 priority
+                style={{ cursor: 'pointer' }}
+              
               />
               {notificationCount > 0 && (
                 <div className={style.notif_count}> {notificationCount}</div>
               )}
             </div>
+
+            <div className={style.themeIcons} style={{ cursor: 'pointer' }}>
+          {theme === 'light' && (
+            <Image
+              src="/sun.png"
+              alt="Dark Mode"
+              width={25}
+              height={25}
+              onClick={handleThemeChange}
+            />
+          )}
+          {theme === 'dark' && (
+            <Image
+              src="/moon.png"
+              alt="Light Mode"
+              width={25}
+              height={25}
+              onClick={handleThemeChange}
+              style={{ filter: 'invert(1)' }}
+            />
+          )}
+          {theme === 'orange' && (
+            <Image
+              src="/colour.png"
+              alt="Orange Mode"
+              width={25}
+              height={25}
+              onClick={handleThemeChange}
+            />
+          )}
+        </div>
           </div>
         </header>
       </div>
